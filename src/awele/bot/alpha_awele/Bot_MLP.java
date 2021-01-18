@@ -1,6 +1,7 @@
 package awele.bot.alpha_awele;
 
 import awele.bot.*;
+import awele.bot.minmax.MinMaxBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 import awele.bot.alpha_awele.mlp.*;
@@ -24,14 +25,14 @@ import java.util.ArrayList;
  * 
  */
 
-public class Bot_MLP extends DemoBot{
+public class Bot_MLP extends CompetitorBot{
 
     private MultiLayerPerceptron mlp;
 
-    private static final int TAINING_TIME = 10; // en secondes
+    private static final int TAINING_TIME =60*5; // en secondes
 
     public Bot_MLP() throws InvalidBotException{
-        mlp = new MultiLayerPerceptron(Board.NB_HOLES*2, 10, 20, Board.NB_HOLES);
+        mlp = new MultiLayerPerceptron(Board.NB_HOLES*2, 5, 20, Board.NB_HOLES);
         this.setBotName("Toast");
         this.addAuthor("Julien Lafille");
     }
@@ -69,7 +70,7 @@ public class Bot_MLP extends DemoBot{
      * Grosse duplication de code mais pas le choix comme je n'ai
      * pas accès à toutes les méthodes de Core
      */
-    public double[] getTrainDecision(TrainBoard board) {
+    public double[] getTrainDecision(Board board) {
 
         double[] input = new double[Board.NB_HOLES*2];
 
@@ -88,10 +89,15 @@ public class Bot_MLP extends DemoBot{
 
         long start = System.currentTimeMillis ();
         int parties = 0;
-
+        try {
+            Bot bot = new MinMaxBot();
+   
         while(System.currentTimeMillis ()-start < TAINING_TIME * 1000){
-            unsupervised();
+            unsupervised(bot);
             parties++;
+        }
+        } catch (InvalidBotException e) {
+            e.printStackTrace();
         }
 
         System.out.println(parties + " games played");
@@ -131,9 +137,15 @@ public class Bot_MLP extends DemoBot{
     /*
      * Le bot joue contre lui même pour génerer plus de donnés
      */
-    private void unsupervised(){
-
-        TrainAwele partie = new TrainAwele(this,this);
+    private void unsupervised(Bot bot){
+    
+    
+        TrainMinMax partie = null;
+    
+     
+            partie = new TrainMinMax(this,bot);
+ 
+    
         partie.play();
         
         ArrayList<Observation> data = partie.getObservations(partie.getWinner() == 0);
@@ -148,12 +160,18 @@ public class Bot_MLP extends DemoBot{
                 state[i] = (double)obs.state[i];
             }
 
-            if(obs.won){
-                output[coup] = 1.0;
-            }
-            else{
-                output = mlp.predict(state);
-                output[coup] = 0.0;
+            if((coup>=0 && coup<= 12)){
+                if(obs.won){
+                    output[coup] = 1.0;
+                }
+                else{
+                    output = mlp.predict(state);
+                    output[coup] = 0.0;
+                }
+                System.out.println("Bon : " + coup);
+            }else {
+    
+                System.out.println("ERREUR : " + coup);
             }
         
             mlp.retropropagation(state, output);

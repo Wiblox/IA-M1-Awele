@@ -107,7 +107,7 @@ public class Board
         return holes;
     }
     
-    void setCurrentPlayer (int currentPlayer)
+    public void setCurrentPlayer(int currentPlayer)
     {
         this.currentPlayer = currentPlayer;
     }
@@ -126,7 +126,7 @@ public class Board
         return 1 - player;
     }
     
-    int getNbSeeds (int player)
+    public int getNbSeeds(int player)
     {
         int sum = 0;
         for (int i = 0; i < Board.NB_HOLES; i++)
@@ -156,7 +156,7 @@ public class Board
         return valid;
     }
     
-    private int selectMove (int player, double [] decision) throws InvalidBotException
+    public int selectMove(int player, double[] decision) throws InvalidBotException
     {
         boolean [] valid = this.validMoves (player);
         int bestMove = -1;
@@ -208,7 +208,7 @@ public class Board
         this.log.get (currentPlayer).add (move);
     }
     
-    int playMove (int player, double [] decision) throws InvalidBotException
+    public int playMove(int player, double[] decision) throws InvalidBotException
     {
         int score = 0;
         int bestMove = this.selectMove (player, decision);
