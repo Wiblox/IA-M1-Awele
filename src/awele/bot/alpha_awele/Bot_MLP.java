@@ -168,13 +168,13 @@ public class Bot_MLP extends CompetitorBot{
                     output = mlp.predict(state);
                     output[coup] = 0.0;
                 }
-                System.out.println("Bon : " + coup);
+                mlp.retropropagation(state, output);
+    
             }else {
     
                 System.out.println("ERREUR : " + coup);
             }
         
-            mlp.retropropagation(state, output);
         }
 
     }
