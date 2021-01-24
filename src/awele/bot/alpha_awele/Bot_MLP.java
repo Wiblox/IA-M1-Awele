@@ -29,7 +29,7 @@ public class Bot_MLP extends CompetitorBot{
 
     private MultiLayerPerceptron mlp;
 
-    private static final int TAINING_TIME =60*5; // en secondes
+    private static final int TAINING_TIME =5; // en secondes
 
     public Bot_MLP() throws InvalidBotException{
         mlp = new MultiLayerPerceptron(Board.NB_HOLES*2, 5, 20, Board.NB_HOLES);
