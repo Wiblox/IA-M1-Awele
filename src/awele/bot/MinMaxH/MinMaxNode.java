@@ -4,6 +4,9 @@ import awele.core.Board;
 import awele.core.InvalidBotException;
 import quickml.data.AttributesMap;
 
+import java.awt.*;
+import java.io.Console;
+
 /**
  * @author Alexandre Blansché
  * Noeud d'un arbre MinMax
@@ -104,30 +107,33 @@ public abstract class MinMaxNode
         int seeds;
     
         score = 25 * (board.getScore (MinMaxNode.player) - board.getScore (Board.otherPlayer (MinMaxNode.player)));
-    
+        int total = 0;
         for (int i = 0; i < 6; i++) {
             seeds = board.getPlayerHoles()[i];
         
             if (seeds > 12)
-                score += 28;
+                total += 28;
             else if (seeds == 0)
-                score -= 54;
+                total -= 54;
             else if (seeds < 3)
-                score -= 36;
+                total -= 36;
         }
     
         for (int i = 0; i < 6; i++) {
             seeds = board.getOpponentHoles()[i];
         
             if (seeds > 12)
-                score -= 28;
+                total -= 28;
             else if (seeds == 0)
-                score += 54;
+                total += 54;
             else if (seeds < 3)
-                score += 36;
+                total += 36;
         }
     
-        return score; }
+        if(board.getCurrentPlayer()==0){
+            total= total * -1;
+        }
+        return score+total; }
 
     /**
      * Mise à jour de alpha
