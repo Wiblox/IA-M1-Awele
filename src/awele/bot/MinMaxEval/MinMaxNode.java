@@ -1,7 +1,16 @@
-package awele.bot.minmaxx;
+package awele.bot.MinMaxEval;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
+import quickml.data.*;
+import quickml.data.instances.ClassifierInstance;
+import quickml.supervised.*;
+import quickml.supervised.ensembles.randomForest.randomDecisionForest.*;
+import quickml.supervised.tree.attributeIgnoringStrategies.*;
+import quickml.supervised.tree.decisionTree.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Alexandre Blansché
@@ -9,6 +18,11 @@ import awele.core.InvalidBotException;
  */
 public abstract class MinMaxNode
 {
+    /** randomForest */
+    private static RandomDecisionForest randomForest;
+
+    
+    
     /** Numéro de joueur de l'IA */
     private static int player;
 
@@ -91,15 +105,33 @@ public abstract class MinMaxNode
     /**
      * Initialisation
      */
-    protected static void initialize (Board board, int maxDepth)
+    protected static void initialize (Board board, int maxDepth,RandomDecisionForest arbre)
     {
         MinMaxNode.maxDepth = maxDepth;
         MinMaxNode.player = board.getCurrentPlayer ();
+        randomForest = arbre;
     }
 
     private int diffScore (Board board)
     {
-        return board.getScore (MinMaxNode.player) - board.getScore (Board.otherPlayer (MinMaxNode.player));
+        if(randomForest != null){
+            AttributesMap attributes = new AttributesMap();
+            attributes.put("Board Player", board.getPlayerHoles());
+            attributes.put("Board Player2", board.getOpponentHoles());
+            System.out.println("Prediction: " + randomForest.predict(attributes));
+        }
+      
+        int total=0;
+        for (int i =0 ; i<5;i++){
+        if(board.getPlayerHoles()[i]<2){
+            total--;
+        }
+        if(board.getOpponentHoles()[i]<2){
+            total++;
+        }
+        }
+        
+        return (board.getScore (MinMaxNode.player) - board.getScore (Board.otherPlayer (MinMaxNode.player)))*100+total;
     }
 
     /**

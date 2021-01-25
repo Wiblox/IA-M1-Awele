@@ -1,82 +1,65 @@
-Mémoire totale : 2,0 GiB
+Mémoire totale : 8,0 GiB
 Instanciation du bot "Random"
-10 classes ont été trouvées
+11 classes ont été trouvées
 class awele.bot.alpha_awele.Bot_MLP
-class awele.bot.random.RandomBot
-class awele.bot.minmaxx.MinMaxxBot
 class awele.bot.first.FirstBot
-class awele.bot.last.LastBot
+class awele.bot.MinMaxEval.MinMaxBot
 class awele.bot.minmax.MinMaxBot
 class awele.bot.knn2.Knn2Bot
 class awele.bot.neural_network_mlp.NeuralNetworkMLP
+class awele.bot.MinMaxH.MinMaxBot
 class awele.bot.nagamax.NegamaxBot
 class awele.bot.knn1.Knn1Bot
+class awele.bot.random.RandomBot
+class awele.bot.last.LastBot
 
-Bot 1/10
+Bot 1/11
 Classe : awele.bot.alpha_awele.Bot_MLP
 Instanciation du bot "Toast"
 Nom du bot : Toast
 Instanciation du bot "MinMax"
-Temps d'apprentissage : 00:00:05.095
+Temps d'apprentissage : 00:00:05.047
 Durée d'une prise de décision : 00:00:00.000
 Usage mémoire : 431,0 KiB
-Usage mémoire maximum : 95,5 MiB
+Usage mémoire maximum : 30,5 MiB
 
-Bot 2/10
-Classe : awele.bot.random.RandomBot
-Instanciation du bot "Random"
-Nom du bot : Random
-Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 424 B
-Usage mémoire maximum : 383,4 KiB
-
-Bot 3/10
-Classe : awele.bot.minmaxx.MinMaxxBot
-Instanciation du bot "MinMax"
-Nom du bot : MinMax
-Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.001
-Usage mémoire : 1,1 KiB
-Usage mémoire maximum : 2,5 MiB
-
-Bot 4/10
+Bot 2/11
 Classe : awele.bot.first.FirstBot
 Instanciation du bot "First"
 Nom du bot : First
 Temps d'apprentissage : 00:00:00.000
 Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 704 B
-Usage mémoire maximum : 459,9 KiB
+Usage mémoire : 424 B
+Usage mémoire maximum : 523,3 KiB
 
-Bot 5/10
-Classe : awele.bot.last.LastBot
-Instanciation du bot "Last"
-Nom du bot : Last
-Temps d'apprentissage : 00:00:00.000
+Bot 3/11
+Classe : awele.bot.MinMaxEval.MinMaxBot
+Instanciation du bot "MinMaxBOOSTED"
+Nom du bot : MinMaxBOOSTED
+Temps d'apprentissage : 00:00:10.051
 Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 584 B
-Usage mémoire maximum : 383,9 KiB
+Usage mémoire : 7,9 KiB
+Usage mémoire maximum : 567,9 MiB
 
-Bot 6/10
+Bot 4/11
 Classe : awele.bot.minmax.MinMaxBot
 Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Temps d'apprentissage : 00:00:00.000
 Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 528 B
-Usage mémoire maximum : 18,0 MiB
+Usage mémoire : 648 B
+Usage mémoire maximum : 46,0 MiB
 
-Bot 7/10
+Bot 5/11
 Classe : awele.bot.knn2.Knn2Bot
 Instanciation du bot "k-NN2"
 Nom du bot : k-NN2
-Temps d'apprentissage : 00:00:00.005
+Temps d'apprentissage : 00:00:00.002
 Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 23,8 KiB
-Usage mémoire maximum : 1,4 MiB
+Usage mémoire : 24,8 KiB
+Usage mémoire maximum : 1,5 MiB
 
-Bot 8/10
+Bot 6/11
 Classe : awele.bot.neural_network_mlp.NeuralNetworkMLP
 Instanciation du bot "NeuralNetworkAwele"
 Nom du bot : NeuralNetworkAwele
@@ -110,252 +93,167 @@ Instanciation du bot "Clone"
 Instanciation du bot "Clone"
 Instanciation du bot "Clone"
 Instanciation du bot "Clone"
-Temps d'apprentissage : 00:00:05.081
+Temps d'apprentissage : 00:00:05.059
 Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 407,9 KiB
-Usage mémoire maximum : 109,8 MiB
+Usage mémoire : 408,0 KiB
+Usage mémoire maximum : 105,5 MiB
 
-Bot 9/10
+Bot 7/11
+Classe : awele.bot.MinMaxH.MinMaxBot
+Instanciation du bot "ENDGAME"
+Nom du bot : ENDGAME
+Temps d'apprentissage : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.000
+Usage mémoire : 1,2 KiB
+Usage mémoire maximum : 3,0 MiB
+
+Bot 8/11
 Classe : awele.bot.nagamax.NegamaxBot
 Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Temps d'apprentissage : 00:00:00.000
 Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 2,3 KiB
-Usage mémoire maximum : 2,7 MiB
+Usage mémoire : 1,3 KiB
+Usage mémoire maximum : 16,0 MiB
 
-Bot 10/10
+Bot 9/11
 Classe : awele.bot.knn1.Knn1Bot
 Instanciation du bot "k-NN1"
 Nom du bot : k-NN1
 Temps d'apprentissage : 00:00:00.001
 Durée d'une prise de décision : 00:00:00.000
 Usage mémoire : 13,0 KiB
-Usage mémoire maximum : 952,0 KiB
+Usage mémoire maximum : 997,0 KiB
 
-10 bots ont été instanciés
-Durée du chargement : 00:00:11.097
-Mémoire utilisée : 4,7 MiB
+Bot 10/11
+Classe : awele.bot.random.RandomBot
+Instanciation du bot "Random"
+Nom du bot : Random
+Temps d'apprentissage : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.000
+Usage mémoire : 584 B
+Usage mémoire maximum : 521,9 KiB
+
+Bot 11/11
+Classe : awele.bot.last.LastBot
+Instanciation du bot "Last"
+Nom du bot : Last
+Temps d'apprentissage : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.000
+Usage mémoire : 584 B
+Usage mémoire maximum : 521,9 KiB
+
+11 bots ont été instanciés
+Durée du chargement : 00:00:20.628
+Mémoire utilisée : 4,8 MiB
 
 Que le championnat commence !
 
-Affrontement 1/45
-Toast vs. Random
-Score : 0.0 - 3.0
-Random a gagné
-Nombre de coups joués : 109.5 par match
-Durée : 00:00:00.001 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 2/45
-Toast vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 63.5 par match
-Durée : 00:00:00.035 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 3/45
+Affrontement 1/55
 Toast vs. First
-Score : 3.0 - 0.0
-Toast a gagné
-Nombre de coups joués : 763.5 par match
-Durée : 00:00:00.005 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 4/45
-Toast vs. Last
 Score : 0.0 - 3.0
-Last a gagné
-Nombre de coups joués : 110.0 par match
+First a gagné
+Nombre de coups joués : 174.5 par match
 Durée : 00:00:00.000 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 5/45
+Affrontement 2/55
+Toast vs. MinMaxBOOSTED
+Score : 0.0 - 3.0
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 55.5 par match
+Durée : 00:00:00.016 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 3/55
 Toast vs. MinMax
 Score : 0.0 - 3.0
 MinMax a gagné
-Nombre de coups joués : 58.5 par match
-Durée : 00:00:00.040 par match
+Nombre de coups joués : 59.0 par match
+Durée : 00:00:00.015 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 6/45
+Affrontement 4/55
 Toast vs. k-NN2
-Score : 3.0 - 0.0
-Toast a gagné
-Nombre de coups joués : 89.0 par match
-Durée : 00:00:00.002 par match
+Score : 0.9 - 2.1
+k-NN2 a gagné
+Nombre de coups joués : 137.9 par match
+Durée : 00:00:00.001 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 7/45
+Affrontement 5/55
 Toast vs. NeuralNetworkAwele
 Score : 0.0 - 3.0
 NeuralNetworkAwele a gagné
-Nombre de coups joués : 93.0 par match
-Durée : 00:00:00.001 par match
+Nombre de coups joués : 650.5 par match
+Durée : 00:00:00.005 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 8/45
-Toast vs. MinMax
+Affrontement 6/55
+Toast vs. ENDGAME
 Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 58.5 par match
-Durée : 00:00:00.030 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 9/45
-Toast vs. k-NN1
-Score : 3.0 - 0.0
-Toast a gagné
-Nombre de coups joués : 125.5 par match
-Durée : 00:00:00.002 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 10/45
-Random vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 35.5 par match
+ENDGAME a gagné
+Nombre de coups joués : 57.7 par match
 Durée : 00:00:00.020 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 11/45
-Random vs. First
-Score : 0.0 - 3.0
-First a gagné
-Nombre de coups joués : 64.5 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 12/45
-Random vs. Last
-Score : 0.0 - 3.0
-Last a gagné
-Nombre de coups joués : 116.5 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 13/45
-Random vs. MinMax
+Affrontement 7/55
+Toast vs. MinMax
 Score : 0.0 - 3.0
 MinMax a gagné
-Nombre de coups joués : 45.5 par match
-Durée : 00:00:00.034 par match
+Nombre de coups joués : 64.1 par match
+Durée : 00:00:00.017 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 14/45
-Random vs. k-NN2
-Score : 0.0 - 3.0
-k-NN2 a gagné
-Nombre de coups joués : 90.0 par match
+Affrontement 8/55
+Toast vs. k-NN1
+Score : 1.2 - 1.8
+k-NN1 a gagné
+Nombre de coups joués : 177.45 par match
 Durée : 00:00:00.001 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 15/45
-Random vs. NeuralNetworkAwele
-Score : 0.0 - 3.0
-NeuralNetworkAwele a gagné
-Nombre de coups joués : 75.5 par match
+Affrontement 9/55
+Toast vs. Random
+Score : 2.7 - 0.3
+Toast a gagné
+Nombre de coups joués : 166.25 par match
 Durée : 00:00:00.000 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 16/45
-Random vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 23.5 par match
-Durée : 00:00:00.008 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 17/45
-Random vs. k-NN1
-Score : 0.0 - 3.0
-k-NN1 a gagné
-Nombre de coups joués : 66.5 par match
+Affrontement 10/55
+Toast vs. Last
+Score : 3.0 - 0.0
+Toast a gagné
+Nombre de coups joués : 211.5 par match
 Durée : 00:00:00.000 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 18/45
-MinMax vs. First
-Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 39.5 par match
-Durée : 00:00:00.022 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 19/45
-MinMax vs. Last
-Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 69.5 par match
-Durée : 00:00:00.035 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 20/45
-MinMax vs. MinMax
+Affrontement 11/55
+First vs. MinMaxBOOSTED
 Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 118.0 par match
-Durée : 00:00:00.097 par match
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 54.9 par match
+Durée : 00:00:00.017 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 21/45
-MinMax vs. k-NN2
-Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 43.5 par match
-Durée : 00:00:00.019 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 22/45
-MinMax vs. NeuralNetworkAwele
-Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 51.5 par match
-Durée : 00:00:00.027 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 23/45
-MinMax vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 117.0 par match
-Durée : 00:00:00.148 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 24/45
-MinMax vs. k-NN1
-Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 40.5 par match
-Durée : 00:00:00.028 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 25/45
-First vs. Last
-Score : 0.0 - 3.0
-Last a gagné
-Nombre de coups joués : 291.5 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 26/45
+Affrontement 12/55
 First vs. MinMax
 Score : 0.0 - 3.0
 MinMax a gagné
-Nombre de coups joués : 50.5 par match
-Durée : 00:00:00.023 par match
+Nombre de coups joués : 54.4 par match
+Durée : 00:00:00.013 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 27/45
+Affrontement 13/55
 First vs. k-NN2
-Score : 0.0 - 3.0
+Score : 0.3 - 2.7
 k-NN2 a gagné
-Nombre de coups joués : 189.0 par match
-Durée : 00:00:00.001 par match
+Nombre de coups joués : 188.1 par match
+Durée : 00:00:00.000 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 28/45
+Affrontement 14/55
 First vs. NeuralNetworkAwele
 Score : 0.0 - 3.0
 NeuralNetworkAwele a gagné
@@ -363,164 +261,358 @@ Nombre de coups joués : 149.5 par match
 Durée : 00:00:00.000 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 29/45
+Affrontement 15/55
+First vs. ENDGAME
+Score : 0.0 - 3.0
+ENDGAME a gagné
+Nombre de coups joués : 55.2 par match
+Durée : 00:00:00.020 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 16/55
 First vs. MinMax
 Score : 0.0 - 3.0
 MinMax a gagné
-Nombre de coups joués : 53.5 par match
-Durée : 00:00:00.030 par match
+Nombre de coups joués : 54.0 par match
+Durée : 00:00:00.013 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 30/45
+Affrontement 17/55
 First vs. k-NN1
 Score : 0.0 - 3.0
 k-NN1 a gagné
-Nombre de coups joués : 204.0 par match
+Nombre de coups joués : 182.6 par match
 Durée : 00:00:00.000 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 31/45
-Last vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 51.5 par match
-Durée : 00:00:00.026 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 32/45
-Last vs. k-NN2
-Score : 3.0 - 0.0
-Last a gagné
-Nombre de coups joués : 132.5 par match
-Durée : 00:00:00.001 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 33/45
-Last vs. NeuralNetworkAwele
-Score : 3.0 - 0.0
-Last a gagné
-Nombre de coups joués : 208.5 par match
-Durée : 00:00:00.001 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 34/45
-Last vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 65.5 par match
-Durée : 00:00:00.032 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 35/45
-Last vs. k-NN1
-Score : 3.0 - 0.0
-Last a gagné
-Nombre de coups joués : 121.5 par match
+Affrontement 18/55
+First vs. Random
+Score : 0.9 - 2.1
+Random a gagné
+Nombre de coups joués : 153.65 par match
 Durée : 00:00:00.000 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 36/45
-MinMax vs. k-NN2
-Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 32.5 par match
-Durée : 00:00:00.016 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 37/45
-MinMax vs. NeuralNetworkAwele
-Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 49.5 par match
-Durée : 00:00:00.030 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 38/45
-MinMax vs. MinMax
-Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 105.5 par match
-Durée : 00:00:00.131 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 39/45
-MinMax vs. k-NN1
-Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 29.5 par match
-Durée : 00:00:00.015 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 40/45
-k-NN2 vs. NeuralNetworkAwele
-Score : 3.0 - 0.0
-k-NN2 a gagné
-Nombre de coups joués : 103.0 par match
-Durée : 00:00:00.001 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 41/45
-k-NN2 vs. MinMax
+Affrontement 19/55
+First vs. Last
 Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 36.5 par match
-Durée : 00:00:00.016 par match
+Last a gagné
+Nombre de coups joués : 291.5 par match
+Durée : 00:00:00.000 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 42/45
-k-NN2 vs. k-NN1
-Score : 0.0 - 3.0
-k-NN1 a gagné
-Nombre de coups joués : 115.5 par match
-Durée : 00:00:00.001 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 43/45
-NeuralNetworkAwele vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 54.5 par match
-Durée : 00:00:00.029 par match
-Mémoire utilisée : 4,5 MiB
-
-Affrontement 44/45
-NeuralNetworkAwele vs. k-NN1
+Affrontement 20/55
+MinMaxBOOSTED vs. MinMax
 Score : 3.0 - 0.0
-NeuralNetworkAwele a gagné
-Nombre de coups joués : 101.0 par match
-Durée : 00:00:00.001 par match
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 115.65 par match
+Durée : 00:00:00.061 par match
 Mémoire utilisée : 4,5 MiB
 
-Affrontement 45/45
-MinMax vs. k-NN1
+Affrontement 21/55
+MinMaxBOOSTED vs. k-NN2
 Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 33.5 par match
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 41.6 par match
+Durée : 00:00:00.013 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 22/55
+MinMaxBOOSTED vs. NeuralNetworkAwele
+Score : 3.0 - 0.0
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 56.4 par match
 Durée : 00:00:00.017 par match
 Mémoire utilisée : 4,5 MiB
 
-Durée du championnat : 00:00:02.541
+Affrontement 23/55
+MinMaxBOOSTED vs. ENDGAME
+Score : 0.9 - 2.1
+ENDGAME a gagné
+Nombre de coups joués : 124.5 par match
+Durée : 00:00:00.069 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 24/55
+MinMaxBOOSTED vs. MinMax
+Score : 2.7 - 0.3
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 129.35 par match
+Durée : 00:00:00.075 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 25/55
+MinMaxBOOSTED vs. k-NN1
+Score : 3.0 - 0.0
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 39.5 par match
+Durée : 00:00:00.012 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 26/55
+MinMaxBOOSTED vs. Random
+Score : 3.0 - 0.0
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 36.6 par match
+Durée : 00:00:00.011 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 27/55
+MinMaxBOOSTED vs. Last
+Score : 3.0 - 0.0
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 60.7 par match
+Durée : 00:00:00.017 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 28/55
+MinMax vs. k-NN2
+Score : 3.0 - 0.0
+MinMax a gagné
+Nombre de coups joués : 39.4 par match
+Durée : 00:00:00.010 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 29/55
+MinMax vs. NeuralNetworkAwele
+Score : 3.0 - 0.0
+MinMax a gagné
+Nombre de coups joués : 58.6 par match
+Durée : 00:00:00.014 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 30/55
+MinMax vs. ENDGAME
+Score : 0.0 - 3.0
+ENDGAME a gagné
+Nombre de coups joués : 91.15 par match
+Durée : 00:00:00.059 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 31/55
+MinMax vs. MinMax
+Score : 0.4 - 2.5
+MinMax a gagné
+Nombre de coups joués : 132.1 par match
+Durée : 00:00:00.084 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 32/55
+MinMax vs. k-NN1
+Score : 3.0 - 0.0
+MinMax a gagné
+Nombre de coups joués : 39.4 par match
+Durée : 00:00:00.011 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 33/55
+MinMax vs. Random
+Score : 3.0 - 0.0
+MinMax a gagné
+Nombre de coups joués : 33.5 par match
+Durée : 00:00:00.009 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 34/55
+MinMax vs. Last
+Score : 3.0 - 0.0
+MinMax a gagné
+Nombre de coups joués : 66.1 par match
+Durée : 00:00:00.018 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 35/55
+k-NN2 vs. NeuralNetworkAwele
+Score : 0.3 - 2.7
+NeuralNetworkAwele a gagné
+Nombre de coups joués : 95.45 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 36/55
+k-NN2 vs. ENDGAME
+Score : 0.0 - 3.0
+ENDGAME a gagné
+Nombre de coups joués : 42.9 par match
+Durée : 00:00:00.016 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 37/55
+k-NN2 vs. MinMax
+Score : 0.0 - 3.0
+MinMax a gagné
+Nombre de coups joués : 40.3 par match
+Durée : 00:00:00.011 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 38/55
+k-NN2 vs. k-NN1
+Score : 1.0 - 1.9
+k-NN1 a gagné
+Nombre de coups joués : 89.3 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 39/55
+k-NN2 vs. Random
+Score : 2.4 - 0.6
+k-NN2 a gagné
+Nombre de coups joués : 74.05 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 40/55
+k-NN2 vs. Last
+Score : 0.0 - 3.0
+Last a gagné
+Nombre de coups joués : 110.55 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 41/55
+NeuralNetworkAwele vs. ENDGAME
+Score : 0.0 - 3.0
+ENDGAME a gagné
+Nombre de coups joués : 58.7 par match
+Durée : 00:00:00.020 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 42/55
+NeuralNetworkAwele vs. MinMax
+Score : 0.0 - 3.0
+MinMax a gagné
+Nombre de coups joués : 59.4 par match
+Durée : 00:00:00.014 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 43/55
+NeuralNetworkAwele vs. k-NN1
+Score : 3.0 - 0.0
+NeuralNetworkAwele a gagné
+Nombre de coups joués : 113.35 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 44/55
+NeuralNetworkAwele vs. Random
+Score : 3.0 - 0.0
+NeuralNetworkAwele a gagné
+Nombre de coups joués : 87.65 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 45/55
+NeuralNetworkAwele vs. Last
+Score : 0.0 - 3.0
+Last a gagné
+Nombre de coups joués : 208.5 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 46/55
+ENDGAME vs. MinMax
+Score : 2.7 - 0.3
+ENDGAME a gagné
+Nombre de coups joués : 101.55 par match
+Durée : 00:00:00.056 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 47/55
+ENDGAME vs. k-NN1
+Score : 3.0 - 0.0
+ENDGAME a gagné
+Nombre de coups joués : 41.9 par match
+Durée : 00:00:00.016 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 48/55
+ENDGAME vs. Random
+Score : 3.0 - 0.0
+ENDGAME a gagné
+Nombre de coups joués : 36.5 par match
+Durée : 00:00:00.013 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 49/55
+ENDGAME vs. Last
+Score : 3.0 - 0.0
+ENDGAME a gagné
+Nombre de coups joués : 61.5 par match
+Durée : 00:00:00.021 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 50/55
+MinMax vs. k-NN1
+Score : 3.0 - 0.0
+MinMax a gagné
+Nombre de coups joués : 44.7 par match
+Durée : 00:00:00.013 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 51/55
+MinMax vs. Random
+Score : 3.0 - 0.0
+MinMax a gagné
+Nombre de coups joués : 38.6 par match
+Durée : 00:00:00.011 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 52/55
+MinMax vs. Last
+Score : 3.0 - 0.0
+MinMax a gagné
+Nombre de coups joués : 59.4 par match
+Durée : 00:00:00.015 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 53/55
+k-NN1 vs. Random
+Score : 3.0 - 0.0
+k-NN1 a gagné
+Nombre de coups joués : 78.9 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 54/55
+k-NN1 vs. Last
+Score : 0.0 - 3.0
+Last a gagné
+Nombre de coups joués : 129.7 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 4,5 MiB
+
+Affrontement 55/55
+Random vs. Last
+Score : 0.0 - 3.0
+Last a gagné
+Nombre de coups joués : 114.15 par match
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 4,5 MiB
+
+Durée du championnat : 00:00:17.768
 
 Scores finaux :
-Toast : 9.0
+Toast : 7.8
+First : 4.2
+MinMaxBOOSTED : 27.6
+MinMax : 21.4
+k-NN2 : 8.5
+NeuralNetworkAwele : 14.7
+ENDGAME : 28.8
+MinMax : 24.1
+k-NN1 : 9.7
 Random : 3.0
-MinMax : 21.0
-First : 3.0
-Last : 18.0
-MinMax : 27.0
-k-NN2 : 9.0
-NeuralNetworkAwele : 12.0
-MinMax : 24.0
-k-NN1 : 9.0
+Last : 15.0
 
 Rangs :
-1. MinMax : 27.0
-2. MinMax : 24.0
-3. MinMax : 21.0
-4. Last : 18.0
-5. NeuralNetworkAwele : 12.0
-6. k-NN1 : 9.0
-7. k-NN2 : 9.0
-8. Toast : 9.0
-9. First : 3.0
-10. Random : 3.0
+1. ENDGAME : 28.8
+2. MinMaxBOOSTED : 27.6
+3. MinMax : 24.1
+4. MinMax : 21.4
+5. Last : 15.0
+6. NeuralNetworkAwele : 14.7
+7. k-NN1 : 9.7
+8. k-NN2 : 8.5
+9. Toast : 7.8
+10. First : 4.2
+11. Random : 3.0
