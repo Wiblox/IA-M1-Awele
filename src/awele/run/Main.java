@@ -30,7 +30,7 @@ public final class Main extends OutputWriter
     private static final String LOG_FILE = "awele.log";
     private static final String ANONYMOUS_LOG_FILE = "awele.anonymous.log";
     //private static final int NB_RUNS = 100;
-    private static final int NB_RUNS = 10;
+    private static final int NB_RUNS = 109;
     private static final int MAX_LEARNING_TIME = 1000 * 60 * 60 * 1; // 1 h
     private static final int MAX_DECISION_TIME = 200; // 100 ms
     private static final int MAX_MEMORY = 1024 * 1024 * 64; // 64 MiB
@@ -119,7 +119,8 @@ public final class Main extends OutputWriter
         Reflections reflections = new Reflections ("awele.bot");
         // Pour l'évaluation, seuls les bots des étudiants (CompetitorBot) sont mis en compétition 
         //Set <Class <? extends CompetitorBot>> subClassesTmp = reflections.getSubTypesOf (CompetitorBot.class);
-        Set <Class <? extends Bot>> subClassesTmp = reflections.getSubTypesOf (Bot.class);
+        Set <Class <? extends DemoBot>> subClassesTmp = reflections.getSubTypesOf (DemoBot.class);
+        //Set <Class <? extends Bot>> subClassesTmp = reflections.getSubTypesOf (Bot.class);
         ArrayList <Class <? extends Bot>> subClasses = new ArrayList <Class <? extends Bot>> ();
         for (Class <? extends Bot> subClass : subClassesTmp)
         {

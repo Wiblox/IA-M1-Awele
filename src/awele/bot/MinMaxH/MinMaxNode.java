@@ -99,41 +99,35 @@ public abstract class MinMaxNode
     }
 
     private int diffScore (Board board){
-
     
-        int total=0;
-        for (int i =0 ; i<5;i++){
-            if(board.getPlayerHoles()[i]<3){
-                total--;
-            }
-            if(board.getOpponentHoles()[i]<3){
-                total++;
-            }
-            if(board.getPlayerHoles()[i]<2){
-                total--;
-            }
-            if(board.getOpponentHoles()[i]<2){
-                total++;
-            }
-            if(board.getPlayerHoles()[i]>12){
-                total++;
-            }
-            if(board.getOpponentHoles()[i]>12){
-                total--;
-            }
-            if(board.getPlayerHoles()[i]==0){
-                total--;
-            }
-            if(board.getOpponentHoles()[i]==0){
-                total++;
-            }
-           
-            
-            
+        int score;
+        int seeds;
+    
+        score = 25 * (board.getScore (MinMaxNode.player) - board.getScore (Board.otherPlayer (MinMaxNode.player)));
+    
+        for (int i = 0; i < 6; i++) {
+            seeds = board.getPlayerHoles()[i];
+        
+            if (seeds > 12)
+                score += 28;
+            else if (seeds == 0)
+                score -= 54;
+            else if (seeds < 3)
+                score -= 36;
         }
     
-        return (board.getScore (MinMaxNode.player) - board.getScore (Board.otherPlayer (MinMaxNode.player)))*100+total;
-    }
+        for (int i = 0; i < 6; i++) {
+            seeds = board.getOpponentHoles()[i];
+        
+            if (seeds > 12)
+                score -= 28;
+            else if (seeds == 0)
+                score += 54;
+            else if (seeds < 3)
+                score += 36;
+        }
+    
+        return score; }
 
     /**
      * Mise à jour de alpha

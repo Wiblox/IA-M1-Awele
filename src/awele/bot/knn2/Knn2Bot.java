@@ -1,5 +1,6 @@
 package awele.bot.knn2;
 
+import awele.bot.Bot;
 import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -8,7 +9,7 @@ import awele.core.InvalidBotException;
  * @author Alexandre Blansché
  * Second bot qui utilise l'algorithm k-NN pour faire des prédictions
  */
-public class Knn2Bot extends DemoBot
+public class Knn2Bot extends Bot
 {
     private static final int k = 10;
     private Knn2Data won;
