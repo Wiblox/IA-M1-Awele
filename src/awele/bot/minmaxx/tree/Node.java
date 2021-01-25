@@ -1,11 +1,11 @@
-package mcts.tree;
+package awele.bot.minmaxx.tree;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import mcts.montecarlo.State;
+import awele.bot.minmaxx.montecarlo.State;
 
 public class Node {
     State state;

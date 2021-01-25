@@ -1,10 +1,10 @@
-package mcts.montecarlo;
+package awele.bot.minmaxx.montecarlo;
 
 import java.util.List;
 
-import mcts.tictactoe.Board;
-import mcts.tree.Node;
-import mcts.tree.Tree;
+import awele.core.Board;
+import awele.bot.minmaxx.tree.Node;
+import awele.bot.minmaxx.tree.Tree;
 
 public class MonteCarloTreeSearch {
 

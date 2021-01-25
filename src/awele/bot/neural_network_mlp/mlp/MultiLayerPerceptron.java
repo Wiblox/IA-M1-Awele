@@ -217,5 +217,7 @@ public class MultiLayerPerceptron
 	}
 	
 	
-
+	public String affiche() {
+		return "DEFAULT_NB_HIDDEN_LAYERS" + DEFAULT_NB_HIDDEN_LAYERS +" DEFAULT_NB_HIDDEN_NEURONS_PER_LAYER" + DEFAULT_NB_HIDDEN_NEURONS_PER_LAYER ;
+	}
 }

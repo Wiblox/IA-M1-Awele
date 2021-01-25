@@ -1,10 +1,11 @@
-package mcts.montecarlo;
+package awele.bot.minmaxx.montecarlo;
+
+import awele.core.Board;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import mcts.tictactoe.Board;
-import mcts.tictactoe.Position;
+
 
 public class State {
     private Board board;

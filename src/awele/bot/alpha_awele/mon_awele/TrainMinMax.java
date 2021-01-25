@@ -3,6 +3,7 @@ package awele.bot.alpha_awele.mon_awele;
 import awele.bot.Bot;
 import awele.bot.alpha_awele.Bot_MLP;
 import awele.bot.minmax.MinMaxBot;
+import awele.core.Awele;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
@@ -76,7 +77,12 @@ public class TrainMinMax
 				double[] decision = ( this.players[currentPlayer]).getDecision(board);
 				
 				try {
-					coups.add(board.selectMove(currentPlayer, decision)); // garde les coups joués en mémoire.
+					int test =board.selectMove(currentPlayer, decision);
+					if(test==-1){
+						System.out.println("Erreur : " +test );
+					}else {
+						coups.add(test); // garde les coups joués en mémoire.
+					}
 				} catch (InvalidBotException e) {
 					e.printStackTrace();
 				}
@@ -84,6 +90,7 @@ public class TrainMinMax
 				int moveScore = 0;
 				try {
 					moveScore = board.playMove(currentPlayer, decision);
+					
 				} catch (InvalidBotException e) {
 					e.printStackTrace();
 				}
@@ -93,9 +100,11 @@ public class TrainMinMax
 					end = true;
 				else
 					score[currentPlayer] += moveScore;
-				
-				
-			if ((score [currentPlayer] >= 25) || (board.getNbSeeds () <= 6))
+			
+			
+			if ((moveScore < 0) ||
+					(board.getScore (Board.otherPlayer (board.getCurrentPlayer ())) >= 25) ||
+					(board.getNbSeeds () <= 6) )
 				end = true;
 			else
 			{

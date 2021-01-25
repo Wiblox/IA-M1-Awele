@@ -1,4 +1,4 @@
-package mcts.tree;
+package awele.bot.minmaxx.tree;
 
 public class Tree {
     Node root;

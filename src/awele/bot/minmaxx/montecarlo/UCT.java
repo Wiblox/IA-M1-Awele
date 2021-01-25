@@ -1,10 +1,10 @@
-package mcts.montecarlo;
+package awele.bot.minmaxx.montecarlo;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import mcts.tree.Node;
+import awele.bot.minmaxx.tree.Node;
 
 public class UCT {
 
