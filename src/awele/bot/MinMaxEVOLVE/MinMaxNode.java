@@ -1,16 +1,9 @@
-package awele.bot.MinMaxEval;
+package awele.bot.MinMaxEVOLVE;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
 import quickml.data.*;
-import quickml.data.instances.ClassifierInstance;
-import quickml.supervised.*;
 import quickml.supervised.ensembles.randomForest.randomDecisionForest.*;
-import quickml.supervised.tree.attributeIgnoringStrategies.*;
-import quickml.supervised.tree.decisionTree.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Alexandre Blansché

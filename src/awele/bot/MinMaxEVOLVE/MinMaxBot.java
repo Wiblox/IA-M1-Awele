@@ -1,16 +1,11 @@
-package awele.bot.MinMaxEval;
+package awele.bot.MinMaxEVOLVE;
 
-import awele.bot.Bot;
 import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 import com.google.common.collect.Lists;
-import quickml.data.AttributesMap;
 import quickml.data.instances.ClassifierInstance;
 import quickml.supervised.ensembles.randomForest.randomDecisionForest.RandomDecisionForest;
-import quickml.supervised.ensembles.randomForest.randomDecisionForest.RandomDecisionForestBuilder;
-import quickml.supervised.tree.attributeIgnoringStrategies.IgnoreAttributesWithConstantProbability;
-import quickml.supervised.tree.decisionTree.DecisionTreeBuilder;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -20,14 +15,15 @@ import java.util.*;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class MinMaxBot extends Bot
+public class MinMaxBot extends DemoBot
 {
     
     private RandomDecisionForest randomForest;
     
     
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 5;
+    //Possible bug nb pair
+    private static final int MAX_DEPTH = 4;
 	
     /**
      * @throws InvalidBotException
@@ -52,15 +48,7 @@ public class MinMaxBot extends Bot
     @Override
     public void learn ()
     {
-    
-        try
-        {
-            this.entrainement(10);
-        }
-        catch (NoSuchFieldException | IllegalAccessException | InvalidBotException e)
-        {
-            e.printStackTrace();
-        }
+
     }
     
     private void entrainement(int secondes) throws NoSuchFieldException, IllegalAccessException, InvalidBotException {

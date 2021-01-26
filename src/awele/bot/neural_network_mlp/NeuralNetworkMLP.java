@@ -24,7 +24,7 @@ import java.util.Random;
  *  - via algo génétique, 30 clones s'affrontent à chaque manche, le meilleur d'entre eux est selectionné
  */
 
-public class NeuralNetworkMLP extends Bot {
+public class NeuralNetworkMLP extends DemoBot {
 
     private MultiLayerPerceptron MLP;
     private static final int PRACTICE_TIME = 1 * 1000; // temps d'entrainement : 50 minutes (1000 signifie 1 seconde)

@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * 
  */
 
-public class Bot_MLP extends Bot{
+public class Bot_MLP extends DemoBot{
 
     private MultiLayerPerceptron mlp;
 

@@ -1,11 +1,8 @@
-package awele.bot.MinMaxH;
+package awele.bot.ENDGAMEEE;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
-import quickml.data.AttributesMap;
 
-import java.awt.*;
-import java.io.Console;
 import java.util.HashMap;
 
 /**
@@ -91,9 +88,9 @@ public abstract class MinMaxNode
     public MinMaxNode (Board board, int depth, double alpha, double beta)
     {
     
-        this.index = hash(board);
-        if (depth<=0)
-        MinMaxNode.nodes.put (this.index, this);
+        this.index = hash(board);//134234
+        if (depth==0)
+            MinMaxNode.nodes.put (this.index, this);
     
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
@@ -135,8 +132,6 @@ public abstract class MinMaxNode
                                  /* On construit le noeud suivant */
                                 child = this.getNextNode (copy, depth + 1, alpha, beta);
     
-                            }else {
-                               // System.out.println("Pas null : " + index);
                             }
                             /* On récupère l'évaluation du noeud fils */
                             this.decision [i] = child.getEvaluation ();
@@ -158,8 +153,8 @@ public abstract class MinMaxNode
                     /* Coupe alpha-beta */ 
                     if (depth > 0)
                     {
-                       // if (this.alphabeta (this.evaluation, alpha, beta))
-                         //   break;
+                        if (this.alphabeta (this.evaluation, alpha, beta))
+                           break;
                         alpha = this.alpha (this.evaluation, alpha);
                         beta = this.beta (this.evaluation, beta);
                     }                        
@@ -239,9 +234,7 @@ public abstract class MinMaxNode
                 total += 36;
         }
     
-        if(board.getCurrentPlayer()==0){
-            total= total * -1;
-        }
+
         return score+total; }
 
     /**
