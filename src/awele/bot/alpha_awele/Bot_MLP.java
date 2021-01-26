@@ -160,23 +160,18 @@ public class Bot_MLP extends CompetitorBot{
                 state[i] = (double)obs.state[i];
             }
 
-            if((coup>=0 && coup<= 12)){
+            if((coup >= 0 && coup <= 12)){
                 if(obs.won){
                     output[coup] = 1.0;
                 }
-                else{
+                else {
                     output = mlp.predict(state);
                     output[coup] = 0.0;
                 }
                 mlp.retropropagation(state, output);
-    
             }else {
-    
                 System.out.println("ERREUR : " + coup);
             }
-        
         }
-
     }
-
 }
