@@ -77,7 +77,7 @@ public class NegamaxNode {
                          * actuelle
                          */
                         else
-                            this.decision[i] = this.diffScore(copy);
+                            this.decision[i] = color * this.diffScore(copy);
                     }
                     /*
                      * L'évaluation courante du noeud est mise à jour, selon le type de noeud
