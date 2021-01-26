@@ -29,21 +29,10 @@ public class NegamaxNode {
      */
     
     public NegamaxNode(Board board, double depth, int color) {
-        // function negamax(node, depth, color) is
-        // if depth = 0 or node is a terminal node then
-        // return color × the heuristic value of node
-        // value := −∞
-        // for each child of node do
-        // value := max(value, −negamax(child, depth − 1, −color))
-        // return value
-        
-        /*
-         * On crée un tableau des évaluations des coups à jouer pour chaque situation
-         * possible
-         */
+   
         this.decision = new double[Board.NB_HOLES];
         /* Initialisation de l'évaluation courante */
-        this.evaluation = Double.MAX_VALUE*color;
+        this.evaluation = Double.MAX_VALUE*-1;
         /* On parcourt toutes les coups possibles */
         for (int i = 0; i < Board.NB_HOLES; i++) {
             /* Si le coup est jouable */
@@ -62,7 +51,7 @@ public class NegamaxNode {
                      */
                     if ((score < 0) || (copy.getScore(Board.otherPlayer(copy.getCurrentPlayer())) >= 25)
                             || (copy.getNbSeeds() <= 6))
-                        this.decision[i] = this.diffScore(copy);
+                        this.decision[i] = color * this.diffScore(copy);
                     /* Sinon, on explore les coups suivants */
                     else {
                         /* Si la profondeur maximale n'est pas atteinte */
@@ -70,7 +59,7 @@ public class NegamaxNode {
                             /* On construit le noeud suivant */
                             NegamaxNode child = negamax(copy, depth+1,-color);
                             /* On récupère l'évaluation du noeud fils */
-                            this.decision[i] = child.getEvaluation();
+                            this.decision[i] = color *child.getEvaluation();
                         }
                         /*
                          * Sinon (si la profondeur maximale est atteinte), on évalue la situation
@@ -83,7 +72,7 @@ public class NegamaxNode {
                      * L'évaluation courante du noeud est mise à jour, selon le type de noeud
                      *
                      */
-                    this.evaluation = Math.max(this.evaluation, -this.decision[i]);
+                    this.evaluation = Math.max(this.evaluation, this.decision[i]);
                 } catch (InvalidBotException e) {
                     this.decision[i] = 0;
                 }
