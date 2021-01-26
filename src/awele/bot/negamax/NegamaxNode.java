@@ -29,7 +29,7 @@ public class NegamaxNode {
      */
     
     public NegamaxNode(Board board, double depth, int color) {
-   
+        NegamaxNode.player= Board.otherPlayer(NegamaxNode.player);
         this.decision = new double[Board.NB_HOLES];
         /* Initialisation de l'évaluation courante */
         this.evaluation = Double.MAX_VALUE*-1;
@@ -51,7 +51,7 @@ public class NegamaxNode {
                      */
                     if ((score < 0) || (copy.getScore(Board.otherPlayer(copy.getCurrentPlayer())) >= 25)
                             || (copy.getNbSeeds() <= 6))
-                        this.decision[i] = color * this.diffScore(copy);
+                        this.decision[i] = color * this.diffScore(copy,color);
                     /* Sinon, on explore les coups suivants */
                     else {
                         /* Si la profondeur maximale n'est pas atteinte */
@@ -66,18 +66,24 @@ public class NegamaxNode {
                          * actuelle
                          */
                         else
-                            this.decision[i] = color * this.diffScore(copy);
+                            this.decision[i] = color * this.diffScore(copy,color);
                     }
                     /*
                      * L'évaluation courante du noeud est mise à jour, selon le type de noeud
                      *
                      */
+                    
                     this.evaluation = Math.max(this.evaluation, this.decision[i]);
                 } catch (InvalidBotException e) {
+                    System.out.println("ERREUR ");
+    
                     this.decision[i] = 0;
                 }
             }
         }
+    
+        
+    
     }
 
     private NegamaxNode negamax(Board copy, double d, int color) {
@@ -89,11 +95,13 @@ public class NegamaxNode {
      */
     protected static void initialize(Board board, int maxDepth) {
         NegamaxNode.maxDepth = maxDepth;
-        NegamaxNode.player = board.getCurrentPlayer();
+        NegamaxNode.player =board.getCurrentPlayer();
     }
 
-    private int diffScore(Board board) {
-        return board.getScore(NegamaxNode.player) - board.getScore(Board.otherPlayer(NegamaxNode.player));
+    private int diffScore(Board board,int color) {
+        int test = color * board.getScore(NegamaxNode.player) - board.getScore(Board.otherPlayer(NegamaxNode.player));
+        System.out.println("diffscore " + test);
+        return test;
     }
 
     /**
