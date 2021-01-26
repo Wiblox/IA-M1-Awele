@@ -1,4 +1,4 @@
-package awele.bot.negamax;
+package awele.bot.NegaMax2;
 
 import awele.bot.DemoBot;
 import awele.core.Board;
@@ -18,7 +18,7 @@ public class NegamaxBot extends DemoBot
      */
     public NegamaxBot() throws InvalidBotException
     {
-        this.setBotName ("Negamax");
+        this.setBotName ("NegaMax - 2");
         this.addAuthor ("Quentin Beaupuy");
     }
 
@@ -41,7 +41,7 @@ public class NegamaxBot extends DemoBot
     public double [] getDecision (Board board)
     {
         NegamaxNode.initialize(board, NegamaxBot.MAX_DEPTH);
-        return new NegamaxNode(board, 0, 1).getDecision();
+        return new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer())).getDecision();
     }
 
     /**

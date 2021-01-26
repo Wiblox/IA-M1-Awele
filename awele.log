@@ -275,3 +275,51 @@ Mémoire utilisée : 6,1 MiB
 
 Affrontement 18/36
 First vs. MinMax
+Score : 0.0 - 3.0
+MinMax a gagné
+Nombre de coups joués : 58.666666666666664 par match
+Durée : 00:00:00.027 par match
+Mémoire utilisée : 6,1 MiB
+
+Affrontement 19/36
+First vs. NeuralNetworkAwele
+Score : 0.0 - 3.0
+NeuralNetworkAwele a gagné
+Nombre de coups joués : 149.5 par match
+Durée : 00:00:00.001 par match
+Mémoire utilisée : 6,1 MiB
+
+Affrontement 20/36
+First vs. ENDGAME V2
+Score : 0.0 - 3.0
+ENDGAME V2 a gagné
+Nombre de coups joués : 51.266666666666666 par match
+Durée : 00:00:00.015 par match
+Mémoire utilisée : 6,3 MiB
+
+Affrontement 21/36
+First vs. ENDGAME V3
+Score : 0.0 - 3.0
+ENDGAME V3 a gagné
+Nombre de coups joués : 77.31666666666666 par match
+Durée : 00:00:00.010 par match
+Mémoire utilisée : 6,3 MiB
+
+Affrontement 22/36
+ENDGAME V2 vs. MinMaxBOOSTED
+Score : 2.7 - 0.3
+ENDGAME V2 a gagné
+Nombre de coups joués : 118.25 par match
+Durée : 00:00:00.198 par match
+Mémoire utilisée : 6,9 MiB
+
+Affrontement 23/36
+ENDGAME V2 vs. MinMax
+Score : 2.7 - 0.3
+ENDGAME V2 a gagné
+Nombre de coups joués : 119.86666666666666 par match
+Durée : 00:00:00.079 par match
+Mémoire utilisée : 7,5 MiB
+
+Affrontement 24/36
+ENDGAME V2 vs. NeuralNetworkAwele
