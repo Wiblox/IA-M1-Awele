@@ -5,41 +5,39 @@ import awele.core.Board;
 import awele.core.InvalidBotException;
 
 /**
- * @author Alexandre Blansché
- * Bot qui prend ses décisions selon le MinMax
+ * @author Alexandre Blansché Bot qui prend ses décisions selon le MinMax
  */
-public class NegamaxBot extends DemoBot
-{
+public class NegamaxBot extends DemoBot {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 3;
-	
+
     /**
      * @throws InvalidBotException
      */
-    public NegamaxBot() throws InvalidBotException
-    {
-        this.setBotName ("Negamax");
-        this.addAuthor ("Quentin Beaupuy");
+    public NegamaxBot() throws InvalidBotException {
+        this.setBotName("Negamax");
+        this.addAuthor("Quentin Beaupuy");
     }
 
     /**
      * Rien à faire
      */
     @Override
-    public void initialize () { }
+    public void initialize() {
+    }
 
     /**
      * Pas d'apprentissage
      */
     @Override
-    public void learn () { }
+    public void learn() {
+    }
 
     /**
      * Sélection du coup selon l'algorithme MinMax
      */
     @Override
-    public double [] getDecision (Board board)
-    {
+    public double[] getDecision(Board board) {
         NegamaxNode.initialize(board, NegamaxBot.MAX_DEPTH);
         return new NegamaxNode(board, 0, 1).getDecision();
     }
@@ -48,5 +46,6 @@ public class NegamaxBot extends DemoBot
      * Rien à faire
      */
     @Override
-    public void finish () { }
+    public void finish() {
+    }
 }
