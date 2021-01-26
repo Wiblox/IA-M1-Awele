@@ -67,7 +67,7 @@ Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Auteur(s) : Alexandre Blansché
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.001
+Durée d'une prise de décision : 00:00:00.000
 Usage mémoire : 1,2 KiB
 Usage mémoire maximum : 21,0 MiB
 
@@ -395,7 +395,7 @@ Mémoire utilisée : 9,9 MiB
 
 Affrontement 33/36
 MinMax vs. ENDGAME V3
-Score : 3.0 - 0.0
+Score : 2.933333333333333 - 0.03333333333333333
 MinMax a gagné
 Nombre de coups joués : 53.43333333333333 par match
 Durée : 00:00:00.032 par match
