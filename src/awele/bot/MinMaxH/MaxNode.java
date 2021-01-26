@@ -15,6 +15,7 @@ public class MaxNode extends MinMaxNode
     MaxNode (Board board)
     {
         this (board, 0, -Double.MAX_VALUE, Double.MAX_VALUE);
+        iaTurn=true;
     }
 
     /**

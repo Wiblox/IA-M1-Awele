@@ -6,6 +6,7 @@ import quickml.data.AttributesMap;
 
 import java.awt.*;
 import java.io.Console;
+import java.util.HashMap;
 
 /**
  * @author Alexandre Blansché
@@ -15,7 +16,19 @@ public abstract class MinMaxNode
 {
     /** Numéro de joueur de l'IA */
     private static int player;
+    
+    boolean iaTurn;
+    
 
+    
+    public static HashMap<Long, MinMaxNode> getNodes() {
+        return nodes;
+    }
+    
+    
+    /** Table de hachage pour stocker les noeuds et éviter des calculs */
+    private static HashMap<Long, MinMaxNode> nodes;
+    
     /** Profondeur maximale */
     private static int maxDepth;
 
@@ -24,7 +37,12 @@ public abstract class MinMaxNode
 
     /** Évaluation des coups selon MinMax */
     private double [] decision;
-
+    
+    /** L'indice du noeud pour la table de hachage */
+    private long index;
+    
+ 
+    
     /**
      * Constructeur... 
      * @param board L'état de la grille de jeu
@@ -32,8 +50,51 @@ public abstract class MinMaxNode
      * @param alpha Le seuil pour la coupe alpha
      * @param beta Le seuil pour la coupe beta
      */
+    
+    /**
+     * Returns an unique hash identifier for the current board. The
+     * produced hash code is a 44 bit number which uniquely identifies
+     * a position and turn.
+     *
+     * @return  The hash code value for this object
+     */
+    public long hash(Board board) {
+    long hash=9;
+    hash =hash*10;
+    
+        int total = 0;
+        for (int i = 0; i < 6; i++) {
+            int Player = board.getPlayerHoles()[i];
+            hash = hash + Player;
+            hash =hash*10;
+            int Opponent = board.getOpponentHoles()[i];
+            hash = hash + Opponent;
+            hash =hash*10;
+            
+        }
+        if(iaTurn){
+        hash = hash + board.getScore (MinMaxNode.player);
+        hash =hash*10;
+        hash = hash + board.getScore (Board.otherPlayer (MinMaxNode.player));}
+        else {
+            hash = hash + board.getScore (Board.otherPlayer (MinMaxNode.player));
+            hash =hash*10;
+            hash = hash + board.getScore (MinMaxNode.player);
+    
+        }
+        return hash;
+    }
+    
+    
+
+    
     public MinMaxNode (Board board, int depth, double alpha, double beta)
     {
+    
+        this.index = hash(board);
+        if (depth<=0)
+        MinMaxNode.nodes.put (this.index, this);
+    
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
         /* Initialisation de l'évaluation courante */
@@ -64,8 +125,19 @@ public abstract class MinMaxNode
                         /* Si la profondeur maximale n'est pas atteinte */
                         if (depth < MinMaxNode.maxDepth)
                         {
-                            /* On construit le noeud suivant */
-                            MinMaxNode child = this.getNextNode (copy, depth + 1, alpha, beta);
+                            /* On récupère l'indice du nouvel état du plateau de jeu */
+                            long index = hash (copy);
+                            /* Et on recherche le noeud correspondant dans la liste des noeuds déjà calculés */
+                            MinMaxNode child = MinMaxNode.getNode (index);
+                            /* Si le noeud n'a pas encore été calculé, on le construit */
+    
+                            if (child == null){
+                                 /* On construit le noeud suivant */
+                                child = this.getNextNode (copy, depth + 1, alpha, beta);
+    
+                            }else {
+                               // System.out.println("Pas null : " + index);
+                            }
                             /* On récupère l'évaluation du noeud fils */
                             this.decision [i] = child.getEvaluation ();
                         }
@@ -74,10 +146,20 @@ public abstract class MinMaxNode
                             this.decision [i] = this.diffScore (copy);
                     }
                     /* L'évaluation courante du noeud est mise à jour, selon le type de noeud (MinNode ou MaxNode) */
+                    
                     this.evaluation = this.minmax (this.decision [i], this.evaluation);
+    
+    
+                    /* Si l'évaluation actuelle est égale à l'optimalité pour le type de noeud, inutile de continuer */
+                    //if ((depth > 0) && (this.evaluation == this.getBestEvaluation ()))
+                      //      break;
+                    
+                    
                     /* Coupe alpha-beta */ 
                     if (depth > 0)
                     {
+                       // if (this.alphabeta (this.evaluation, alpha, beta))
+                         //   break;
                         alpha = this.alpha (this.evaluation, alpha);
                         beta = this.beta (this.evaluation, beta);
                     }                        
@@ -88,15 +170,42 @@ public abstract class MinMaxNode
                 }
             }
     }
-
+    
+    public long getIndex(Board board)
+    {
+        return this.index;
+    }
+    
+    
+    /**
+     * Récupération d'un noeud déjà calculé
+     * @param index L'indice du noeud
+     * @return Le noeud qui a l'indice indiqué ou null s'il n'a pas encore été calculé
+     */
+    public static MinMaxNode getNode (long index)
+    {
+        return MinMaxNode.nodes.get (index);
+    }
+    
+    /**
+     * @return Le nombre de noeuds calculées
+     */
+    public static int getNbNodes ()
+    {
+        return MinMaxNode.nodes.size ();
+    }
+    
+    
+    
     /** Pire score pour un joueur */
     protected abstract double worst ();
 
     /**
      * Initialisation
      */
-    protected static void initialize (Board board, int maxDepth)
+    protected static void initialize (Board board, int maxDepth,HashMap <Long, MinMaxNode> HashMap )
     {
+        MinMaxNode.nodes = HashMap;
         MinMaxNode.maxDepth = maxDepth;
         MinMaxNode.player = board.getCurrentPlayer ();
     }

@@ -20,14 +20,14 @@ import java.util.*;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class MinMaxBot extends DemoBot
+public class MinMaxBot extends Bot
 {
     
     private RandomDecisionForest randomForest;
     
     
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 4;
+    private static final int MAX_DEPTH = 5;
 	
     /**
      * @throws InvalidBotException

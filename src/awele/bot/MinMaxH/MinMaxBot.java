@@ -4,6 +4,10 @@ import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 /**
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
@@ -12,7 +16,9 @@ public class MinMaxBot extends DemoBot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 4;
-	
+    private  HashMap <Long, MinMaxNode> HashMap;
+    
+    
     /**
      * @throws InvalidBotException
      */
@@ -36,6 +42,8 @@ public class MinMaxBot extends DemoBot
     @Override
     public void learn ()
     {
+        HashMap = new HashMap <Long, MinMaxNode>();
+    
     }
 
     /**
@@ -44,8 +52,23 @@ public class MinMaxBot extends DemoBot
     @Override
     public double [] getDecision (Board board)
     {
-        MinMaxNode.initialize (board, MinMaxBot.MAX_DEPTH);
-        return new MaxNode(board).getDecision ();
+        MinMaxNode.initialize (board, MinMaxBot.MAX_DEPTH,HashMap);
+    
+    
+        double[] test=  new MaxNode(board).getDecision ();
+ 
+        HashMap<Long, MinMaxNode> map = MaxNode.getNodes();
+        //Boucle while+iterator
+        //System.out.println("Boucle while");
+        // Iterator iterator = map.entrySet().iterator();
+        // while (iterator.hasNext()) {
+        //   Map.Entry mapentry = (Map.Entry) iterator.next();
+        //     System.out.println("clef: "+mapentry.getKey()
+                    //             + " | valeur: " + mapentry.getValue());
+        // }
+        System.out.println("Nombre de noeux: "+map.size());
+    
+        return  test;
     }
 
     /**

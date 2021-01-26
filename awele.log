@@ -1,160 +1,49 @@
 Mémoire totale : 8,0 GiB
 Instanciation du bot "Random"
-5 classes ont été trouvées
-class awele.bot.random.RandomBot
-class awele.bot.first.FirstBot
-class awele.bot.MinMaxEval.MinMaxBot
+2 classes ont été trouvées
 class awele.bot.minmax.MinMaxBot
 class awele.bot.MinMaxH.MinMaxBot
 
-Bot 1/5
-Classe : awele.bot.random.RandomBot
-Instanciation du bot "Random"
-Nom du bot : Random
-Auteur(s) : Alexandre Blansché
-Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 0 B
-Usage mémoire maximum : 555,6 KiB
-
-Bot 2/5
-Classe : awele.bot.first.FirstBot
-Instanciation du bot "First"
-Nom du bot : First
-Auteur(s) : Alexandre Blansché
-Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 344 B
-Usage mémoire maximum : 382,6 KiB
-
-Bot 3/5
-Classe : awele.bot.MinMaxEval.MinMaxBot
-Instanciation du bot "MinMaxBOOSTED"
-Nom du bot : MinMaxBOOSTED
-Auteur(s) : Vivien KORPYS
-Temps d'apprentissage : 00:00:10.095
-Durée d'une prise de décision : 00:00:00.002
-Usage mémoire : 406,3 KiB
-Usage mémoire maximum : 11,0 MiB
-
-Bot 4/5
+Bot 1/2
 Classe : awele.bot.minmax.MinMaxBot
 Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Auteur(s) : Alexandre Blansché
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.002
-Usage mémoire : 1,3 KiB
-Usage mémoire maximum : 94,0 MiB
+Durée d'une prise de décision : 00:00:00.047
+Usage mémoire : 391,0 KiB
+Usage mémoire maximum : 150,4 MiB
 
-Bot 5/5
+Bot 2/2
 Classe : awele.bot.MinMaxH.MinMaxBot
 Instanciation du bot "ENDGAME"
 Nom du bot : ENDGAME
 Auteur(s) : Vivien KORPYS
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.003
-Usage mémoire : 1,2 KiB
-Usage mémoire maximum : 32,0 MiB
+Durée d'une prise de décision : 00:00:00.004
+Usage mémoire : 6,4 KiB
+Usage mémoire maximum : 104,0 MiB
 
-5 bots ont été instanciés
-Durée du chargement : 00:00:10.588
+2 bots ont été instanciés
+Durée du chargement : 00:00:01.849
 Mémoire utilisée : 4,3 MiB
 
 Que le championnat commence !
 
-Affrontement 1/10
-Random vs. First
-Score : 1.5 - 1.5
-Égalité
-Nombre de coups joués : 135.875 par match
-Durée : 00:00:00.000 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 2/10
-Random vs. MinMaxBOOSTED
-Score : 0.0 - 3.0
-MinMaxBOOSTED a gagné
-Nombre de coups joués : 33.35 par match
-Durée : 00:00:00.038 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 3/10
-Random vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 33.55 par match
-Durée : 00:00:00.037 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 4/10
-Random vs. ENDGAME
-Score : 0.0 - 3.0
-ENDGAME a gagné
-Nombre de coups joués : 41.3 par match
-Durée : 00:00:00.053 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 5/10
-First vs. MinMaxBOOSTED
-Score : 0.0 - 3.0
-MinMaxBOOSTED a gagné
-Nombre de coups joués : 48.3 par match
-Durée : 00:00:00.057 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 6/10
-First vs. MinMax
-Score : 0.0 - 3.0
-MinMax a gagné
-Nombre de coups joués : 46.45 par match
-Durée : 00:00:00.056 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 7/10
-First vs. ENDGAME
-Score : 0.0 - 3.0
-ENDGAME a gagné
-Nombre de coups joués : 51.8 par match
-Durée : 00:00:00.089 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 8/10
-MinMaxBOOSTED vs. MinMax
-Score : 1.2 - 1.8
-MinMax a gagné
-Nombre de coups joués : 73.0 par match
-Durée : 00:00:00.131 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 9/10
-MinMaxBOOSTED vs. ENDGAME
-Score : 0.75 - 2.25
-ENDGAME a gagné
-Nombre de coups joués : 77.85 par match
-Durée : 00:00:00.159 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 10/10
+Affrontement 1/1
 MinMax vs. ENDGAME
-Score : 0.2 - 2.75
+Score : 1.3666666666666667 - 1.5666666666666667
 ENDGAME a gagné
-Nombre de coups joués : 86.8 par match
-Durée : 00:00:00.183 par match
-Mémoire utilisée : 4,1 MiB
+Nombre de coups joués : 96.98333333333333 par match
+Durée : 00:00:01.604 par match
+Mémoire utilisée : 4,5 MiB
 
-Durée du championnat : 00:00:32.535
+Durée du championnat : 00:01:36.296
 
 Scores finaux :
-Random : 1.5
-First : 1.5
-MinMaxBOOSTED : 7.95
-MinMax : 8.0
-ENDGAME : 11.0
+MinMax : 1.37
+ENDGAME : 1.57
 
 Rangs :
-1. ENDGAME : 11.0
-2. MinMax : 8.0
-3. MinMaxBOOSTED : 7.95
-4. First : 1.5
-5. Random : 1.5
+1. ENDGAME : 1.57
+2. MinMax : 1.37
