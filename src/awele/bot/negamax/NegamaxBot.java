@@ -41,7 +41,7 @@ public class NegamaxBot extends DemoBot
     public double [] getDecision (Board board)
     {
         NegamaxNode.initialize(board, NegamaxBot.MAX_DEPTH);
-        return (new NegamaxNode(board,0,1)).getDecision();
+        return (new NegamaxNode(board,0,-1)).getDecision();
     }
 
     /**
