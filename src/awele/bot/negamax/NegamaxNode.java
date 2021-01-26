@@ -68,7 +68,7 @@ public class NegamaxNode {
                         /* Si la profondeur maximale n'est pas atteinte */
                         if (depth < NegamaxNode.maxDepth) {
                             /* On construit le noeud suivant */
-                            NegamaxNode child = negamax(copy, depth+1,-1*color);
+                            NegamaxNode child = negamax(copy, depth+1,-color);
                             /* On récupère l'évaluation du noeud fils */
                             this.decision[i] = child.getEvaluation();
                         }
@@ -83,7 +83,7 @@ public class NegamaxNode {
                      * L'évaluation courante du noeud est mise à jour, selon le type de noeud
                      *
                      */
-                    this.evaluation = Math.max(this.decision[i], -1*this.evaluation);
+                    this.evaluation = Math.max(this.evaluation, -this.decision[i]);
                 } catch (InvalidBotException e) {
                     this.decision[i] = 0;
                 }
