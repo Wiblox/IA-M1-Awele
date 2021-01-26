@@ -1,14 +1,8 @@
 Mémoire totale : 2,0 GiB
 Instanciation du bot "Random"
-8 classes ont été trouvées
-class awele.bot.alpha_awele.Bot_MLP
-class awele.bot.random.RandomBot
-class awele.bot.first.FirstBot
-class awele.bot.last.LastBot
+2 classes ont été trouvées
 class awele.bot.minmax.MinMaxBot
-class awele.bot.knn2.Knn2Bot
-class awele.bot.neural_network_mlp.NeuralNetworkMLP
-class awele.bot.knn1.Knn1Bot
+class awele.bot.MinMaxH.MinMaxBot
 
 Bot 1/8
 Classe : awele.bot.alpha_awele.Bot_MLP
@@ -52,6 +46,7 @@ Classe : awele.bot.minmax.MinMaxBot
 Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Temps d'apprentissage : 00:00:00.000
+<<<<<<< HEAD
 Durée d'une prise de décision : 00:00:00.001
 Usage mémoire : 536 B
 Usage mémoire maximum : 14,0 MiB
@@ -364,3 +359,41 @@ Rangs :
 6. k-NN1 : 7.76
 7. Random : 2.95
 8. First : 2.5
+=======
+Durée d'une prise de décision : 00:00:00.047
+Usage mémoire : 391,0 KiB
+Usage mémoire maximum : 150,4 MiB
+
+Bot 2/2
+Classe : awele.bot.MinMaxH.MinMaxBot
+Instanciation du bot "ENDGAME"
+Nom du bot : ENDGAME
+Temps d'apprentissage : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.004
+Usage mémoire : 6,4 KiB
+Usage mémoire maximum : 104,0 MiB
+
+2 bots ont été instanciés
+Durée du chargement : 00:00:01.849
+Mémoire utilisée : 4,3 MiB
+
+Que le championnat commence !
+
+Affrontement 1/1
+MinMax vs. ENDGAME
+Score : 1.3666666666666667 - 1.5666666666666667
+ENDGAME a gagné
+Nombre de coups joués : 96.98333333333333 par match
+Durée : 00:00:01.604 par match
+Mémoire utilisée : 4,5 MiB
+
+Durée du championnat : 00:01:36.296
+
+Scores finaux :
+MinMax : 1.37
+ENDGAME : 1.57
+
+Rangs :
+1. ENDGAME : 1.57
+2. MinMax : 1.37
+>>>>>>> 8bf5954e3477914417c73662c5ae9608f8896b80

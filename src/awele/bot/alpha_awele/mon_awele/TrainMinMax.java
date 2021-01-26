@@ -76,10 +76,18 @@ public class TrainMinMax
 				double[] decision = ( this.players[currentPlayer]).getDecision(board);
 				
 				try {
+<<<<<<< HEAD
 					coups.add(board.selectMove(currentPlayer, decision)); // garde les coups joués en mémoire.
 					if(board.selectMove(currentPlayer, decision) == -1) {
 						System.out.println("ERREUR ici");
 						System.out.println(Arrays.toString(decision));
+=======
+					int test =board.selectMove(currentPlayer, decision);
+					if(test==-1){
+						System.out.println("Erreur : " +test );
+					}else {
+						coups.add(test); // garde les coups joués en mémoire.
+>>>>>>> 8bf5954e3477914417c73662c5ae9608f8896b80
 					}
 				} catch (InvalidBotException e) {
 					e.printStackTrace();
@@ -88,6 +96,7 @@ public class TrainMinMax
 				int moveScore = 0;
 				try {
 					moveScore = board.playMove(currentPlayer, decision);
+					
 				} catch (InvalidBotException e) {
 					e.printStackTrace();
 				}
@@ -97,9 +106,11 @@ public class TrainMinMax
 					end = true;
 				else
 					score[currentPlayer] += moveScore;
-				
-				
-			if ((score [currentPlayer] >= 25) || (board.getNbSeeds () <= 6))
+			
+			
+			if ((moveScore < 0) ||
+					(board.getScore (Board.otherPlayer (board.getCurrentPlayer ())) >= 25) ||
+					(board.getNbSeeds () <= 6) )
 				end = true;
 			else
 			{
