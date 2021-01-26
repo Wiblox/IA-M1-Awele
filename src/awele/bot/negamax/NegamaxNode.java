@@ -6,7 +6,7 @@ import awele.core.InvalidBotException;
 /**
  * @author Alexandre Blansché Noeud d'un arbre MinMax
  */
-public abstract class NegamaxNode {
+public class NegamaxNode {
     /** Numéro de joueur de l'IA */
     private static int player;
 
@@ -68,7 +68,7 @@ public abstract class NegamaxNode {
                         /* Si la profondeur maximale n'est pas atteinte */
                         if (depth < NegamaxNode.maxDepth) {
                             /* On construit le noeud suivant */
-                            NegamaxNode child = negamax(copy, depth−1, −color);
+                            NegamaxNode child = negamax(copy, depth+1,-1*color);
                             /* On récupère l'évaluation du noeud fils */
                             this.decision[i] = child.getEvaluation();
                         }
@@ -81,7 +81,7 @@ public abstract class NegamaxNode {
                     }
                     /*
                      * L'évaluation courante du noeud est mise à jour, selon le type de noeud
-                     * (MinNode ou MaxNode)
+                     *
                      */
                     this.evaluation = Math.max(this.decision[i], -1*this.evaluation);
                 } catch (InvalidBotException e) {

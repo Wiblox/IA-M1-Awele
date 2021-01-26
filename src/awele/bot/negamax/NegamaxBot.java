@@ -11,7 +11,7 @@ import awele.core.InvalidBotException;
 public class NegamaxBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 6;
+    private static final int MAX_DEPTH = 3;
 	
     /**
      * @throws InvalidBotException
@@ -41,7 +41,7 @@ public class NegamaxBot extends DemoBot
     public double [] getDecision (Board board)
     {
         NegamaxNode.initialize(board, NegamaxBot.MAX_DEPTH);
-        return new NegamamaxNode(board).getDecision();
+        return (new NegamaxNode(board,0,1)).getDecision();
     }
 
     /**

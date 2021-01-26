@@ -15,7 +15,7 @@ public class EndGameBot extends DemoBot
     /** Profondeur maximale */
     //Nombre Impair Autrement BUG
 
-    private static final int MAX_DEPTH = 4;
+    private static final int MAX_DEPTH = 2;
     private  HashMap <Long, MinMaxNode> HashMap;
     
     
