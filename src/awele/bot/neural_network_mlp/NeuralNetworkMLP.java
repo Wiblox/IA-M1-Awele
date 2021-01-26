@@ -173,7 +173,6 @@ public class NeuralNetworkMLP extends DemoBot {
 			try {
 				champions[i] = new  NeuralNetworkMLP(MLP.clone()); // Ce sont 30 clones de notre MLP
 			} catch (InvalidBotException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			if(i > 10) {

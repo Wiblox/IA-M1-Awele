@@ -2,12 +2,11 @@ package awele.bot.alpha_awele.mon_awele;
 
 import awele.bot.Bot;
 import awele.bot.alpha_awele.Bot_MLP;
-import awele.bot.minmax.MinMaxBot;
-import awele.core.Awele;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -77,11 +76,18 @@ public class TrainMinMax
 				double[] decision = ( this.players[currentPlayer]).getDecision(board);
 				
 				try {
+<<<<<<< HEAD
+					coups.add(board.selectMove(currentPlayer, decision)); // garde les coups joués en mémoire.
+					if(board.selectMove(currentPlayer, decision) == -1) {
+						System.out.println("ERREUR ici");
+						System.out.println(Arrays.toString(decision));
+=======
 					int test =board.selectMove(currentPlayer, decision);
 					if(test==-1){
 						System.out.println("Erreur : " +test );
 					}else {
 						coups.add(test); // garde les coups joués en mémoire.
+>>>>>>> 8bf5954e3477914417c73662c5ae9608f8896b80
 					}
 				} catch (InvalidBotException e) {
 					e.printStackTrace();
