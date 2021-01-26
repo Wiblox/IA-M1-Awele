@@ -7,9 +7,6 @@ import awele.core.InvalidBotException;
  * @author Alexandre Blansché Noeud d'un arbre MinMax
  */
 public class NegamaxNode {
-    /** Numéro de joueur de l'IA */
-    private static int player;
-
     /** Profondeur maximale */
     private static int maxDepth;
 
@@ -95,7 +92,6 @@ public class NegamaxNode {
      */
     protected static void initialize(Board board, int maxDepth) {
         NegamaxNode.maxDepth = maxDepth;
-        NegamaxNode.player = board.getCurrentPlayer();
     }
 
     /**

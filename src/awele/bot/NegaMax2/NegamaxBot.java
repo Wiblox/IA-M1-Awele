@@ -11,15 +11,15 @@ import awele.core.InvalidBotException;
 public class NegamaxBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 3;
+    private static final int MAX_DEPTH = 6;
 	
     /**
      * @throws InvalidBotException
      */
     public NegamaxBot() throws InvalidBotException
     {
-        this.setBotName ("NegaMax - 2");
-        this.addAuthor ("Quentin Beaupuy");
+        this.setBotName("NegaMax V2");
+        this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
     }
 
     /**
