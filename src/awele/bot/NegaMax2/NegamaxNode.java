@@ -20,7 +20,6 @@ public class NegamaxNode {
     private static int i2;
     private static int i3;
     private static int i4;
-    private final long index;
     
     private double depth;
     
@@ -56,8 +55,7 @@ public class NegamaxNode {
         this.depth=depth;
         /* On crée index de notre situation */
     
-        this.index = hash(board);//134234
-        //this.nodes.put (this.index, this);
+    
     
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
@@ -88,17 +86,10 @@ public class NegamaxNode {
                         if (depth < NegamaxNode.maxDepth) {
     
     
-                            long index = hash (copy);
-                            /* Et on recherche le noeud correspondant dans la liste des noeuds déjà calculés */
-                            NegamaxNode child = this.getNode (index);
-                            
-                            /* Si le noeud n'a pas encore été calculé, on le construit */
-                            if (child == null){
+                         
                                 /* On construit le noeud suivant */
-                                child =  negamax(copy, depth+1, opponentTour, myTour);
-                            }else if(child.getDepth() > depth+1){
-                                child =  negamax(copy, depth+1, opponentTour, myTour);
-                            }
+                                NegamaxNode child =  negamax(copy, depth+1, opponentTour, myTour);
+                         
                             
                             /* On récupère l'évaluation du noeud fils */
                             this.decision[i] = -child.getEvaluation();
@@ -171,14 +162,8 @@ public class NegamaxNode {
     /**
      * Initialisation
      */
-    protected static void initialize(int maxDepth, int i4, int i3, int i2, int i1, int i,HashMap <Long, NegamaxNode> HashMap) {
-        NegamaxNode.nodes = HashMap;
+    protected static void initialize(int maxDepth) {
         NegamaxNode.maxDepth = maxDepth;
-        NegamaxNode.i=i;
-        NegamaxNode.i1=i1;
-        NegamaxNode.i2=i2;
-        NegamaxNode.i3=i3;
-        NegamaxNode.i4=i4;
     }
     
     /**

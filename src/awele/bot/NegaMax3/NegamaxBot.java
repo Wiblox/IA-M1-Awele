@@ -6,11 +6,15 @@ import awele.core.Awele;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Alexandre Blansché
@@ -19,7 +23,7 @@ import java.util.Map;
 public class NegamaxBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 3;
+    private static final int MAX_DEPTH = 5;
     private boolean train =false;
     private static final int PRACTICE_TIME = 2 * 1000;
     
@@ -229,16 +233,35 @@ public class NegamaxBot extends DemoBot
         this.trainningModeV(champion.i,champion.i1,champion.i2,champion.i3,champion.i4);
     }
     
-    
+    private static String formatDuration(final long l) {
+        final long hr = TimeUnit.MILLISECONDS.toHours(l);
+        final long min = TimeUnit.MILLISECONDS.toMinutes(l - TimeUnit.HOURS.toMillis(hr));
+        final long sec = TimeUnit.MILLISECONDS
+                .toSeconds(l - TimeUnit.HOURS.toMillis(hr) - TimeUnit.MINUTES.toMillis(min));
+        final long ms = TimeUnit.MILLISECONDS.toMillis(
+                l - TimeUnit.HOURS.toMillis(hr) - TimeUnit.MINUTES.toMillis(min) - TimeUnit.SECONDS.toMillis(sec));
+        return String.format("%02d:%02d:%02d.%03d", hr, min, sec, ms);
+    }
     /**
      * Sélection du coup selon l'algorithme MinMax
      */
     @Override
     public double [] getDecision (Board board)
+    { long start = System.currentTimeMillis();
+        double[] res = new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer())).getDecision();
     
-    {
-        return new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer())).getDecision();
-    }
+    
+        long end = System.currentTimeMillis();
+        try {
+            File myObj = new File("log_negamaxV3.txt");
+            myObj.createNewFile();
+            FileWriter myWriter = new FileWriter(myObj.getAbsoluteFile(), true);
+            myWriter.write(formatDuration(end - start)+"\n");
+            myWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return res;}
 
     /**
      * Rien à faire
