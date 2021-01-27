@@ -1,6 +1,5 @@
-package awele.bot.NegaMax2;
+package awele.bot.NegaMax3;
 
-import awele.bot.ENDGAMEEE.MinMaxNode;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
@@ -57,7 +56,8 @@ public class NegamaxNode {
         /* On crée index de notre situation */
     
         this.index = hash(board);//134234
-        //this.nodes.put (this.index, this);
+        if (depth==0)
+            this.nodes.put (this.index, this);
     
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
@@ -98,8 +98,9 @@ public class NegamaxNode {
                                 child =  negamax(copy, depth+1, opponentTour, myTour);
                             }else if(child.getDepth() > depth+1){
                                 child =  negamax(copy, depth+1, opponentTour, myTour);
+                            }else {
+                                System.out.println("Existe deja");
                             }
-                            
                             /* On récupère l'évaluation du noeud fils */
                             this.decision[i] = -child.getEvaluation();
                         }

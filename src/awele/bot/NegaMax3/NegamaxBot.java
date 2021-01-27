@@ -1,9 +1,7 @@
-package awele.bot.NegaMax2;
+package awele.bot.NegaMax3;
 
 import awele.bot.Bot;
 import awele.bot.DemoBot;
-import awele.bot.ENDGAMEEE.MinMaxNode;
-import awele.bot.neural_network_mlp.NeuralNetworkMLP;
 import awele.core.Awele;
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -23,7 +21,7 @@ public class NegamaxBot extends DemoBot
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 3;
     private boolean train =false;
-    private static final int PRACTICE_TIME = 60 * 1000;
+    private static final int PRACTICE_TIME = 2 * 1000;
     
     /** Variable de genetique  */
     private static int i;
@@ -31,14 +29,14 @@ public class NegamaxBot extends DemoBot
     private static int i2;
     private static int i3;
     private static int i4;
-    HashMap<Long, NegamaxNode> HashMap;
+    HashMap<Long, NegamaxNode> HashMap = new HashMap <Long, NegamaxNode>();
     
     /**
      * @throws InvalidBotException
      */
     public NegamaxBot() throws InvalidBotException
     {
-        this.setBotName("NegaMax V2");
+        this.setBotName("NegaMax V3");
         this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
         
     }
@@ -78,9 +76,42 @@ public class NegamaxBot extends DemoBot
      */
     @Override
     public void learn () {
-        HashMap = new HashMap <Long, NegamaxNode>();
+        
     
         // trainning();
+        //working();
+        
+    }
+    
+    
+    private void working() {
+        NegamaxBot[] champions = new NegamaxBot[2];
+        int practice_games = 0;
+        long timer = System.currentTimeMillis ();
+        int nbBots = 2;
+        try {
+            champions[1] = new  NegamaxBot(); // Ce sont 20 clones de notre MLP
+        } catch (InvalidBotException e) {
+            e.printStackTrace();
+        }
+        
+        champions[0]=this;
+    
+        do {
+            // Les champions sont envoyés dans un tournois pour s'affronter et reviennent ordonnés dans l'ordre croissant du plus fort au plus faible
+            try {
+                champions = tournament(champions,nbBots);
+            } catch (InvalidBotException e) {
+                e.printStackTrace();
+            }
+        
+            practice_games++;
+        }
+        while(System.currentTimeMillis () - timer < PRACTICE_TIME);
+        System.out.println("taille arbre this   = " + this.HashMap.size());
+        System.out.println("taille arbre this   = " +  champions[0].HashMap.size());
+        System.out.println("taille arbre  = " + champions[1].HashMap.size());
+        this.HashMap=champions[1].HashMap;
         
     }
     
@@ -185,7 +216,7 @@ public class NegamaxBot extends DemoBot
                     return Double.compare (points [index1], points [index2]);
                 }
             });
-            java.util.Arrays.sort (points);
+            Arrays.sort (points);
 
         
             return champions;
