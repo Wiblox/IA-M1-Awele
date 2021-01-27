@@ -1,5 +1,6 @@
 package awele.bot.NegaMax2;
 
+import awele.bot.ENDGAMEEE.MinMaxNode;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
@@ -80,7 +81,36 @@ public class NegamaxNode {
     }
 
     private int scoreEntireBoardById(Board board, int myTour) {
-        return board.getScore(myTour) - board.getScore(Board.otherPlayer(myTour));
+    
+    
+        int score;
+        int seeds;
+    
+        score = 25 * (board.getScore(myTour) - board.getScore(Board.otherPlayer(myTour)));
+        int total = 0;
+        
+        for (int i = 0; i < 6; i++) {
+            seeds = board.getPlayerHoles()[i];
+            if (seeds > 12)
+                total += 28;
+            else if (seeds == 0)
+                total -= 54;
+            else if (seeds < 3)
+                total -= 36;
+        }
+    
+        for (int i = 0; i < 6; i++) {
+            seeds = board.getOpponentHoles()[i];
+        
+            if (seeds > 12)
+                total -= 28;
+            else if (seeds == 0)
+                total += 54;
+            else if (seeds < 3)
+                total += 36;
+        }
+    
+    return score-total;
     }
 
     private NegamaxNode negamax(Board board, double depth, int myTour, int opponentTour) {
