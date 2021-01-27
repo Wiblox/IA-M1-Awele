@@ -239,7 +239,7 @@ public class NegamaxBot extends DemoBot
     @Override
     public double [] getDecision (Board board)
     { long start = System.currentTimeMillis();
-        double[] res = new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer())).getDecision();
+        double[] res = new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer()),-9999,9999).getDecision();
     
     
         long end = System.currentTimeMillis();
