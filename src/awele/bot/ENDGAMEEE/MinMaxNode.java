@@ -89,8 +89,8 @@ public abstract class MinMaxNode
     {
     
         this.index = hash(board);//134234
-        if (depth==0)
-            MinMaxNode.nodes.put (this.index, this);
+        //if (depth==0)
+            //MinMaxNode.nodes.put (this.index, this);
     
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];

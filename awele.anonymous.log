@@ -1,59 +1,69 @@
-Mémoire totale : 2,0 GiB
+Mémoire totale : 8,0 GiB
 Instanciation du bot "Random"
-6 classes ont été trouvées
+7 classes ont été trouvées
 class awele.bot.NegaMax2.NegamaxBot
+class awele.bot.NegaMax3.NegamaxBot
 class awele.bot.first.FirstBot
 class awele.bot.ENDGAMEEE.EndGameBot
 class awele.bot.MinMaxEVOLVE.MinMaxBot
 class awele.bot.minmax.MinMaxBot
 class awele.bot.neural_network_mlp.NeuralNetworkMLP
 
-Bot 1/6
+Bot 1/7
 Classe : awele.bot.NegaMax2.NegamaxBot
 Instanciation du bot "NegaMax V2"
 Nom du bot : NegaMax V2
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.007
+Durée d'une prise de décision : 00:00:00.016
 Usage mémoire : 0 B
-Usage mémoire maximum : 6,7 MiB
+Usage mémoire maximum : 28,0 MiB
 
-Bot 2/6
+Bot 2/7
+Classe : awele.bot.NegaMax3.NegamaxBot
+Instanciation du bot "NegaMax V3"
+Nom du bot : NegaMax V3
+Temps d'apprentissage : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.016
+Usage mémoire : 13,6 MiB
+Usage mémoire maximum : 130,4 MiB
+
+Bot 3/7
 Classe : awele.bot.first.FirstBot
 Instanciation du bot "First"
 Nom du bot : First
 Temps d'apprentissage : 00:00:00.000
 Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 592 B
-Usage mémoire maximum : 505,1 KiB
+Usage mémoire : 584 B
+Usage mémoire maximum : 889,5 KiB
 
-Bot 3/6
+Bot 4/7
 Classe : awele.bot.ENDGAMEEE.EndGameBot
 Instanciation du bot "ENDGAME V2"
 Nom du bot : ENDGAME V2
-Temps d'apprentissage : 00:00:00.001
-Durée d'une prise de décision : 00:00:00.001
-Usage mémoire : 11,7 KiB
-Usage mémoire maximum : 5,7 MiB
+Temps d'apprentissage : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.000
+Usage mémoire : 1,4 KiB
+Usage mémoire maximum : 20,7 MiB
 
-Bot 4/6
+Bot 5/7
 Classe : awele.bot.MinMaxEVOLVE.MinMaxBot
 Instanciation du bot "MinMaxBOOSTED"
 Nom du bot : MinMaxBOOSTED
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.009
+Durée d'une prise de décision : 00:00:00.002
 Usage mémoire : 1,6 KiB
-Usage mémoire maximum : 522,1 KiB
+Usage mémoire maximum : 29,9 MiB
 
-Bot 5/6
+Bot 6/7
 Classe : awele.bot.minmax.MinMaxBot
 Instanciation du bot "MinMax"
 Nom du bot : MinMax
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.002
+Durée d'une prise de décision : 00:00:00.000
 Usage mémoire : 1,2 KiB
-Usage mémoire maximum : 19,0 MiB
+Usage mémoire maximum : 15,8 MiB
 
-Bot 6/6
+Bot 7/7
 Classe : awele.bot.neural_network_mlp.NeuralNetworkMLP
 Instanciation du bot "NeuralNetworkAwele"
 Nom du bot : NeuralNetworkAwele
@@ -87,18 +97,26 @@ Instanciation du bot "Clone"
 Instanciation du bot "Clone"
 Instanciation du bot "Clone"
 Instanciation du bot "Clone"
-Temps d'apprentissage : 00:00:02.838
+Temps d'apprentissage : 00:00:01.247
 Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 544,3 KiB
-Usage mémoire maximum : 19,6 MiB
+Usage mémoire : 410,7 KiB
+Usage mémoire maximum : 211,5 MiB
 
-6 bots ont été instanciés
-Durée du chargement : 00:00:05.178
-Mémoire utilisée : 4,2 MiB
+7 bots ont été instanciés
+Durée du chargement : 00:00:02.930
+Mémoire utilisée : 18,4 MiB
 
 Que le championnat commence !
 
-Affrontement 1/15
+Affrontement 1/21
+NegaMax V2 vs. NegaMax V3
+Score : 0.6 - 2.4
+NegaMax V3 a gagné
+Nombre de coups joués : 117.6 par match
+Durée : 00:00:01.220 par match
+Mémoire utilisée : 178,1 MiB
+
+Affrontement 2/21
 NegaMax V2 vs. First
 Score : 3.0 - 0.0
 MinMaxBOOSTED a gagné
@@ -110,120 +128,178 @@ Affrontement 15/15
 MinMax vs. NeuralNetworkAwele
 Score : 3.0 - 0.0
 NegaMax V2 a gagné
-Nombre de coups joués : 46.46666666666667 par match
-Durée : 00:00:00.073 par match
-Mémoire utilisée : 4,1 MiB
+Nombre de coups joués : 56.1 par match
+Durée : 00:00:00.426 par match
+Mémoire utilisée : 178,1 MiB
 
-Affrontement 2/15
+Affrontement 3/21
 NegaMax V2 vs. ENDGAME V2
 Score : 3.0 - 0.0
-MinMax a gagné
-Nombre de coups joués : 57.9 par match
-Durée : 00:00:00.032 par match
-Mémoire utilisée : 6,0 MiB
+NegaMax V2 a gagné
+Nombre de coups joués : 84.8 par match
+Durée : 00:00:00.360 par match
+Mémoire utilisée : 178,1 MiB
 
-Durée du championnat : 00:01:46.139
-
-Scores finaux :
-NegaMax V2 : 11.4
-First : 0.0
-ENDGAME V2 : 13.2
-MinMaxBOOSTED : 10.2
-MinMax : 7.07
-NeuralNetworkAwele : 3.0
-
-Rangs :
-1. ENDGAME V2 : 13.2
-2. NegaMax V2 : 11.4
-3. MinMaxBOOSTED : 10.2
-4. MinMax : 7.07
-5. NeuralNetworkAwele : 3.0
-6. First : 0.0
-Score : 0.9333333333333333 - 2.033333333333333
-ENDGAME V2 a gagné
-Nombre de coups joués : 131.38333333333333 par match
-Durée : 00:00:00.163 par match
-Mémoire utilisée : 4,8 MiB
-
-Affrontement 3/15
+Affrontement 4/21
 NegaMax V2 vs. MinMaxBOOSTED
-Score : 2.433333333333333 - 0.5333333333333333
+Score : 3.0 - 0.0
 NegaMax V2 a gagné
-Nombre de coups joués : 107.63333333333334 par match
-Durée : 00:00:00.240 par match
-Mémoire utilisée : 4,8 MiB
+Nombre de coups joués : 82.0 par match
+Durée : 00:00:00.562 par match
+Mémoire utilisée : 178,1 MiB
 
-Affrontement 4/15
+Affrontement 5/21
 NegaMax V2 vs. MinMax
-Score : 2.7 - 0.3
+Score : 3.0 - 0.0
 NegaMax V2 a gagné
-Nombre de coups joués : 118.96666666666667 par match
-Durée : 00:00:00.170 par match
-Mémoire utilisée : 4,8 MiB
+Nombre de coups joués : 80.9 par match
+Durée : 00:00:00.497 par match
+Mémoire utilisée : 178,1 MiB
 
-Affrontement 5/15
+Affrontement 6/21
 NegaMax V2 vs. NeuralNetworkAwele
 Score : 3.0 - 0.0
 NegaMax V2 a gagné
-Nombre de coups joués : 53.0 par match
-Durée : 00:00:00.039 par match
-Mémoire utilisée : 4,8 MiB
+Nombre de coups joués : 53.3 par match
+Durée : 00:00:00.364 par match
+Mémoire utilisée : 178,1 MiB
 
-Affrontement 6/15
+Affrontement 7/21
+NegaMax V3 vs. First
+Score : 3.0 - 0.0
+NegaMax V3 a gagné
+Nombre de coups joués : 48.1 par match
+Durée : 00:00:00.437 par match
+Mémoire utilisée : 308,2 MiB
+
+Affrontement 8/21
+NegaMax V3 vs. ENDGAME V2
+Score : 3.0 - 0.0
+NegaMax V3 a gagné
+Nombre de coups joués : 86.8 par match
+Durée : 00:00:00.565 par match
+Mémoire utilisée : 444,8 MiB
+
+Affrontement 9/21
+NegaMax V3 vs. MinMaxBOOSTED
+Score : 2.4 - 0.6
+NegaMax V3 a gagné
+Nombre de coups joués : 115.4 par match
+Durée : 00:00:00.592 par match
+Mémoire utilisée : 593,4 MiB
+
+Affrontement 10/21
+NegaMax V3 vs. MinMax
+Score : 2.6 - 0.2
+NegaMax V3 a gagné
+Nombre de coups joués : 82.4 par match
+Durée : 00:00:00.491 par match
+Mémoire utilisée : 722,9 MiB
+
+Affrontement 11/21
+NegaMax V3 vs. NeuralNetworkAwele
+Score : 3.0 - 0.0
+NegaMax V3 a gagné
+Nombre de coups joués : 52.1 par match
+Durée : 00:00:00.437 par match
+Mémoire utilisée : 847,9 MiB
+
+Affrontement 12/21
 First vs. ENDGAME V2
 Score : 0.0 - 3.0
 ENDGAME V2 a gagné
-Nombre de coups joués : 57.766666666666666 par match
-Durée : 00:00:00.013 par match
-Mémoire utilisée : 4,9 MiB
+Nombre de coups joués : 64.3 par match
+Durée : 00:00:00.008 par match
+Mémoire utilisée : 847,9 MiB
 
-Affrontement 7/15
+Affrontement 13/21
 First vs. MinMaxBOOSTED
 Score : 0.0 - 3.0
 MinMaxBOOSTED a gagné
-Nombre de coups joués : 47.36666666666667 par match
-Durée : 00:00:00.094 par match
-Mémoire utilisée : 4,9 MiB
+Nombre de coups joués : 57.9 par match
+Durée : 00:00:00.053 par match
+Mémoire utilisée : 847,9 MiB
 
-Affrontement 8/15
+Affrontement 14/21
 First vs. MinMax
 Score : 0.0 - 3.0
 MinMax a gagné
-Nombre de coups joués : 57.333333333333336 par match
-Durée : 00:00:00.029 par match
-Mémoire utilisée : 4,9 MiB
+Nombre de coups joués : 57.7 par match
+Durée : 00:00:00.012 par match
+Mémoire utilisée : 847,9 MiB
 
-Affrontement 9/15
+Affrontement 15/21
 First vs. NeuralNetworkAwele
 Score : 0.0 - 3.0
 NeuralNetworkAwele a gagné
 Nombre de coups joués : 149.5 par match
-Durée : 00:00:00.001 par match
-Mémoire utilisée : 4,9 MiB
+Durée : 00:00:00.000 par match
+Mémoire utilisée : 847,9 MiB
 
-Affrontement 10/15
+Affrontement 16/21
 ENDGAME V2 vs. MinMaxBOOSTED
-Score : 2.2666666666666666 - 0.6666666666666666
+Score : 3.0 - 0.0
 ENDGAME V2 a gagné
-Nombre de coups joués : 104.85 par match
-Durée : 00:00:00.160 par match
-Mémoire utilisée : 5,5 MiB
+Nombre de coups joués : 126.1 par match
+Durée : 00:00:00.094 par match
+Mémoire utilisée : 847,9 MiB
 
-Affrontement 11/15
+Affrontement 17/21
 ENDGAME V2 vs. MinMax
-Score : 2.7 - 0.3
+Score : 2.4 - 0.6
 ENDGAME V2 a gagné
-Nombre de coups joués : 116.71666666666667 par match
-Durée : 00:00:00.063 par match
-Mémoire utilisée : 6,0 MiB
+Nombre de coups joués : 138.0 par match
+Durée : 00:00:00.042 par match
+Mémoire utilisée : 847,9 MiB
 
-Affrontement 12/15
+Affrontement 18/21
 ENDGAME V2 vs. NeuralNetworkAwele
 Score : 3.0 - 0.0
 ENDGAME V2 a gagné
-Nombre de coups joués : 66.53333333333333 par match
-Durée : 00:00:00.021 par match
-Mémoire utilisée : 6,1 MiB
+Nombre de coups joués : 63.5 par match
+Durée : 00:00:00.008 par match
+Mémoire utilisée : 847,9 MiB
 
-Affrontement 13/15
+Affrontement 19/21
 MinMaxBOOSTED vs. MinMax
+Score : 2.4 - 0.6
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 110.7 par match
+Durée : 00:00:00.117 par match
+Mémoire utilisée : 847,9 MiB
+
+Affrontement 20/21
+MinMaxBOOSTED vs. NeuralNetworkAwele
+Score : 3.0 - 0.0
+MinMaxBOOSTED a gagné
+Nombre de coups joués : 58.7 par match
+Durée : 00:00:00.063 par match
+Mémoire utilisée : 847,9 MiB
+
+Affrontement 21/21
+MinMax vs. NeuralNetworkAwele
+Score : 3.0 - 0.0
+MinMax a gagné
+Nombre de coups joués : 75.3 par match
+Durée : 00:00:00.017 par match
+Mémoire utilisée : 847,9 MiB
+
+Durée du championnat : 00:01:08.269
+
+Scores finaux :
+NegaMax V2 : 15.6
+NegaMax V3 : 16.4
+First : 0.0
+ENDGAME V2 : 11.4
+MinMaxBOOSTED : 9.0
+MinMax : 7.4
+NeuralNetworkAwele : 3.0
+
+Rangs :
+1. NegaMax V3 : 16.4
+2. NegaMax V2 : 15.6
+3. ENDGAME V2 : 11.4
+4. MinMaxBOOSTED : 9.0
+5. MinMax : 7.4
+6. NeuralNetworkAwele : 3.0
+7. First : 0.0
