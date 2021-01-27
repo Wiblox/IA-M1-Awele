@@ -263,7 +263,21 @@ public final class Main extends OutputWriter {
         for (int i = nbBots - 1; i >= 0; i--) {
             this.print((nbBots - i) + ". " + this.bots.get(i) + " : " + points[i]);
         }
-        
+    }
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        new File("log_negamaxV2.txt").delete();
+        new File("log_negamaxV3.txt").delete();
+        Main main = Main.getInstance();
+        main.addOutput(StandardOutput.getInstance());
+        main.addOutput(new LogFileOutput(Main.LOG_FILE));
+        main.addOutput(new LogFileOutput(Main.ANONYMOUS_LOG_FILE, true));
+        main.loadBots();
+        main.tournament();
+
         try {
             File myObj = new File("log_negamaxV2.txt");
             Scanner myReader = new Scanner(myObj);
@@ -276,23 +290,27 @@ public final class Main extends OutputWriter {
             }
             myReader.close();
             myObj.delete();
-            System.out.println(Main.formatDuration(res / nbLines));
+            System.out.println("__NegamaxV2 : "+Main.formatDuration(res / nbLines));
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }        
+        try {
+            File myObj = new File("log_negamaxV3.txt");
+            Scanner myReader = new Scanner(myObj);
+            long res = 0;
+            int nbLines = 0;
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                nbLines++;
+                res += Long.parseLong(data);
+            }
+            myReader.close();
+            myObj.delete();
+            System.out.println("__NegamaxV3 : "+Main.formatDuration(res / nbLines));
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
-    }
-
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        Main main = Main.getInstance();
-        main.addOutput(StandardOutput.getInstance());
-        main.addOutput(new LogFileOutput(Main.LOG_FILE));
-        main.addOutput(new LogFileOutput(Main.ANONYMOUS_LOG_FILE, true));
-        main.loadBots();
-        main.tournament();
     }
 }

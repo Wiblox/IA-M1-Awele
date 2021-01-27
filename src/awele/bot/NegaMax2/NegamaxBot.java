@@ -38,16 +38,6 @@ public class NegamaxBot extends DemoBot {
     public void learn() {
     }
 
-    private static String formatDuration(final long l) {
-        final long hr = TimeUnit.MILLISECONDS.toHours(l);
-        final long min = TimeUnit.MILLISECONDS.toMinutes(l - TimeUnit.HOURS.toMillis(hr));
-        final long sec = TimeUnit.MILLISECONDS
-                .toSeconds(l - TimeUnit.HOURS.toMillis(hr) - TimeUnit.MINUTES.toMillis(min));
-        final long ms = TimeUnit.MILLISECONDS.toMillis(
-                l - TimeUnit.HOURS.toMillis(hr) - TimeUnit.MINUTES.toMillis(min) - TimeUnit.SECONDS.toMillis(sec));
-        return String.format("%02d:%02d:%02d.%03d", hr, min, sec, ms);
-    }
-
     /**
      * Sélection du coup selon l'algorithme MinMax
      */
@@ -62,7 +52,7 @@ public class NegamaxBot extends DemoBot {
             File myObj = new File("log_negamaxV2.txt");
             myObj.createNewFile();
             FileWriter myWriter = new FileWriter(myObj.getAbsoluteFile(), true);
-            myWriter.write(formatDuration(end - start)+"\n");
+            myWriter.write((end - start)+"\n");
             myWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
