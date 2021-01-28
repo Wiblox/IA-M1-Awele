@@ -1,4 +1,4 @@
-package awele.bot.NegaMax3;
+package awele.bot.NegaMax5;
 
 import awele.bot.Bot;
 import awele.bot.DemoBot;
@@ -14,7 +14,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author Alexandre Blansché
@@ -40,7 +39,7 @@ public class NegamaxBot extends DemoBot
      */
     public NegamaxBot() throws InvalidBotException
     {
-        this.setBotName("NegaMax V3");
+        this.setBotName("NegaMax V5");
         this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
         
     }
@@ -239,12 +238,12 @@ public class NegamaxBot extends DemoBot
     @Override
     public double [] getDecision (Board board)
     { long start = System.currentTimeMillis();
-        double[] res = new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer()),-9999,9999).getDecision();
+        double[] res = new awele.bot.NegaMax5.NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer()),-9999,9999).getDecision();
     
     
         long end = System.currentTimeMillis();
         try {
-            File myObj = new File("log_negamaxV3.txt");
+            File myObj = new File("log_negamaxV5.txt");
             myObj.createNewFile();
             FileWriter myWriter = new FileWriter(myObj.getAbsoluteFile(), true);
             myWriter.write((end - start)+"\n");

@@ -312,5 +312,22 @@ public final class Main extends OutputWriter {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+        try {
+            File myObj = new File("log_negamaxV5.txt");
+            Scanner myReader = new Scanner(myObj);
+            long res = 0;
+            int nbLines = 0;
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                nbLines++;
+                res += Long.parseLong(data);
+            }
+            myReader.close();
+            myObj.delete();
+            System.out.println("__NegamaxV5 : "+Main.formatDuration(res / nbLines));
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 }
