@@ -289,7 +289,6 @@ public final class Main extends OutputWriter {
                 res += Long.parseLong(data);
             }
             myReader.close();
-            myObj.delete();
             System.out.println("__NegamaxV2 : "+Main.formatDuration(res / nbLines));
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
@@ -306,7 +305,6 @@ public final class Main extends OutputWriter {
                 res += Long.parseLong(data);
             }
             myReader.close();
-            myObj.delete();
             System.out.println("__NegamaxV3 : "+Main.formatDuration(res / nbLines));
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");

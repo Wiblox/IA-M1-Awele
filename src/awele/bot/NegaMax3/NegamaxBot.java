@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class NegamaxBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 5;
+    private static final int MAX_DEPTH = 8;
     private boolean train =false;
     private static final int PRACTICE_TIME = 2 * 1000;
     
@@ -240,7 +240,6 @@ public class NegamaxBot extends DemoBot
     public double [] getDecision (Board board)
     { long start = System.currentTimeMillis();
         double[] res = new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer()),-9999,9999).getDecision();
-    
     
         long end = System.currentTimeMillis();
         try {

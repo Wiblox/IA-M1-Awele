@@ -1,4 +1,4 @@
-package awele.bot.NegaMax3;
+package awele.bot.NegaMax4;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -17,9 +17,8 @@ public class NegamaxNode {
     private static int i;
     private static int i1;
     private static int i2;
-    private static int i3;
+    // private static int i3;
     private static int i4;
-    private final long index;
     
     private double depth;
     
@@ -51,12 +50,11 @@ public class NegamaxNode {
 
      */
 
-    public NegamaxNode(Board board, double depth, int myTour, int opponentTour,double a,double b) {
+    public NegamaxNode(Board board, double depth, int myTour, int opponentTour) {
         this.depth=depth;
         /* On crée index de notre situation */
     
-        this.index = hash(board);//134234
-        //this.nodes.put (this.index, this);
+    
     
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
@@ -87,17 +85,11 @@ public class NegamaxNode {
                         if (depth < NegamaxNode.maxDepth) {
     
     
-                            long index = hash (copy);
-                            /* Et on recherche le noeud correspondant dans la liste des noeuds déjà calculés */
-                            NegamaxNode child = this.getNode (index);
-                            
-                            /* Si le noeud n'a pas encore été calculé, on le construit */
-                            if (child == null){
+                         
                                 /* On construit le noeud suivant */
-                                child =  negamax(copy, depth+1, opponentTour, myTour,-b,-a);
-                            }else if(child.getDepth() > depth+1){
-                                child =  negamax(copy, depth+1, opponentTour, myTour,-b,-a);
-                            }
+                                NegamaxNode child =  negamax(copy, depth+1, opponentTour, myTour);
+                         
+                            
                             /* On récupère l'évaluation du noeud fils */
                             this.decision[i] = -child.getEvaluation();
                         }
@@ -115,14 +107,6 @@ public class NegamaxNode {
                     if (this.decision[i] > this.evaluation) {
                         this.evaluation = this.decision[i];
                     }
-    
-                    if(depth>0){
-                    a = Double.max(a, this.decision[i]);
-                    if (a >= b) {
-                        //System.out.println("Exit ");
-                        break;
-                    }}
-                    
                 } catch (InvalidBotException e) {
                     this.decision[i] = 0;
                 }
@@ -131,10 +115,9 @@ public class NegamaxNode {
     }
     
     
-    private double getDepth() {
-        
-        return  depth;
-    }
+    // private double getDepth() {
+    //     return  depth;
+    // }
     
     
     private int scoreEntireBoardById(Board board, int myTour) {
@@ -149,7 +132,7 @@ public class NegamaxNode {
         for (int i = 0; i < 6; i++) {
             seeds = board.getPlayerHoles()[i];
             if (seeds > 12)
-                total += 28+this.i;
+                total += 28+ NegamaxNode.i;
             else if (seeds == 0)
                 total -= 54+i1;
             else if (seeds < 3)
@@ -160,7 +143,7 @@ public class NegamaxNode {
             seeds = board.getOpponentHoles()[i];
         
             if (seeds > 12)
-                total -= 28+this.i;
+                total -= 28+NegamaxNode.i;
             else if (seeds == 0)
                 total += 54+i1;
             else if (seeds < 3)
@@ -170,21 +153,15 @@ public class NegamaxNode {
     return score-total;
     }
 
-    private NegamaxNode negamax(Board board, double depth, int myTour, int opponentTour,double i,double j) {
-        return new NegamaxNode(board, depth, myTour, opponentTour,i,j);
+    private NegamaxNode negamax(Board board, double depth, int myTour, int opponentTour) {
+        return new NegamaxNode(board, depth, myTour, opponentTour);
     }
 
     /**
      * Initialisation
      */
-    protected static void initialize(int maxDepth, int i4, int i3, int i2, int i1, int i,HashMap <Long, NegamaxNode> HashMap) {
-        NegamaxNode.nodes = HashMap;
+    protected static void initialize(int maxDepth) {
         NegamaxNode.maxDepth = maxDepth;
-        NegamaxNode.i=i;
-        NegamaxNode.i1=i1;
-        NegamaxNode.i2=i2;
-        NegamaxNode.i3=i3;
-        NegamaxNode.i4=i4;
     }
     
     /**

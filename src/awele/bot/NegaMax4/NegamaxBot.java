@@ -1,4 +1,4 @@
-package awele.bot.NegaMax2;
+package awele.bot.NegaMax4;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -13,13 +13,13 @@ import awele.core.InvalidBotException;
  */
 public class NegamaxBot extends DemoBot {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 5;
+    private static final int MAX_DEPTH = 6;
 
     /**
      * @throws InvalidBotException
      */
     public NegamaxBot() throws InvalidBotException {
-        this.setBotName("NegaMax V2");
+        this.setBotName("NegaMax V4");
         this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
     }
 
