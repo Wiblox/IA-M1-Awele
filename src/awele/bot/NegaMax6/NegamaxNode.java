@@ -1,4 +1,4 @@
-package awele.bot.NegaMax3;
+package awele.bot.NegaMax6;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -19,7 +19,6 @@ public class NegamaxNode {
     private static int i2;
     private static int i3;
     private static int i4;
-    private final long index;
     
     private double depth;
     
@@ -45,83 +44,58 @@ public class NegamaxNode {
     }
     /**
      * Constructeur...
-     * 
+     *
      * @param board L'état de la grille de jeu
      * @param depth La profondeur du noeud
-
+     
      */
-
+    
     public NegamaxNode(Board board, double depth, int myTour, int opponentTour,double a,double b) {
         this.depth=depth;
-        /* On crée index de notre situation */
-    
-        this.index = hash(board);//134234
-        //this.nodes.put (this.index, this);
-    
-        /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
+        
         this.decision = new double [Board.NB_HOLES];
-        /* Initialisation de l'évaluation courante */
         this.evaluation = -Double.MAX_VALUE;
-
+        
         for (int i = 0; i < Board.NB_HOLES; i++) {
-            /* Si le coup est jouable */
             if (board.getPlayerHoles()[i] != 0) {
-                /* Sélection du coup à jouer */
                 double[] decision = new double[Board.NB_HOLES];
                 decision[i] = 1;
-                /* On copie la grille de jeu et on joue le coup sur la copie */
                 Board copy = (Board) board.clone();
                 try {
                     int score_tmp = copy.playMoveSimulationScore(copy.getCurrentPlayer(), decision);
                     copy = copy.playMoveSimulationBoard(copy.getCurrentPlayer(), decision);
-                    /*
-                     * Si la nouvelle situation de jeu est un coup qui met fin à la partie, on
-                     * évalue la situation actuelle
-                     */
                     if ((score_tmp < 0) || (copy.getScore(Board.otherPlayer(copy.getCurrentPlayer())) >= 25)
                             || (copy.getNbSeeds() <= 6) || !(depth < NegamaxNode.maxDepth))
                         this.decision[i] = scoreEntireBoardById(copy, myTour);
-                    /* Sinon, on explore les coups suivants */
                     else {
     
-    
-                            long index = hash (copy);
-                            /* Et on recherche le noeud correspondant dans la liste des noeuds déjà calculés */
-                            NegamaxNode child = this.getNode (index);
-                            
-                            /* Si le noeud n'a pas encore été calculé, on le construit */
-                            if (child == null){
-                                /* On construit le noeud suivant */
-                                child =  negamax(copy, depth+1, opponentTour, myTour,-b,-a);
-                            }else if(child.getDepth() > depth+1){
-                                child =  negamax(copy, depth+1, opponentTour, myTour,-b,-a);
+                       
+                        if(i==0){
+                            NegamaxNode child =   negamax(copy, depth+1, opponentTour, myTour,-b,-a);
+                        this.decision[i] = -child.getEvaluation();
+                        }else {
+                            NegamaxNode child =   negamax(copy, depth+2, opponentTour, myTour,-b,-a);
+                             this.decision[i] = -child.getEvaluation();
+                             if(a < this.decision[i] && this.decision[i] <b){
+                                  child =   negamax(copy, depth+1, opponentTour, myTour,-b,-this.decision[i]);
+                                this.decision[i] = -child.getEvaluation();
                             }
-                            /* On récupère l'évaluation du noeud fils */
-                            this.decision[i] = -child.getEvaluation();
-                        
-                        /*
-                         * Sinon (si la profondeur maximale est atteinte), on évalue la situation
-                         * actuelle
-                         */
-                      
+                        }
                     }
-                    /*
-                     * L'évaluation courante du noeud est mise à jour, selon le type de noeud
-                     * (MinNode ou MaxNode)
-                     */
+    
+    
                     if (this.decision[i] > this.evaluation) {
                         this.evaluation = this.decision[i];
                     }
-    
                     if(depth>0){
-                    a = Double.max(a, this.decision[i]);
-                    if (a >= b) {
-                        //System.out.println("Exit ");
-                        break;
-                    }}
-                    
+        
+                        a = Double.max(a, this.decision[i]);
+                        if (a >= b) {
+                            break;
+                        }}
                 } catch (InvalidBotException e) {
                     this.decision[i] = 0;
+                    System.out.println("ERREUR");
                 }
             }
         }
@@ -135,11 +109,11 @@ public class NegamaxNode {
     
     
     private int scoreEntireBoardById(Board board, int myTour) {
-    
-    
+        
+        
         int score;
         int seeds;
-    
+        
         score = (25+i4) * (board.getScore(myTour) - board.getScore(Board.otherPlayer(myTour)));
         int total = 0;
         
@@ -152,10 +126,10 @@ public class NegamaxNode {
             else if (seeds < 3)
                 total -= 36+i2;
         }
-    
+        
         for (int i = 0; i < 6; i++) {
             seeds = board.getOpponentHoles()[i];
-        
+            
             if (seeds > 12)
                 total -= 28+this.i;
             else if (seeds == 0)
@@ -163,14 +137,14 @@ public class NegamaxNode {
             else if (seeds < 3)
                 total += 36+i2;
         }
-    
-    return score-total;
+        
+        return score-total;
     }
-
+    
     private NegamaxNode negamax(Board board, double depth, int myTour, int opponentTour,double i,double j) {
         return new NegamaxNode(board, depth, myTour, opponentTour,i,j);
     }
-
+    
     /**
      * Initialisation
      */
@@ -201,20 +175,20 @@ public class NegamaxNode {
     {
         return NegamaxNode.nodes.size ();
     }
-
-
+    
+    
     /**
      * L'évaluation du noeud
-     * 
+     *
      * @return L'évaluation du noeud
      */
     double getEvaluation() {
         return this.evaluation;
     }
-
+    
     /**
      * L'évaluation de chaque coup possible pour le noeud
-     * 
+     *
      * @return
      */
     double[] getDecision() {

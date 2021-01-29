@@ -1,4 +1,4 @@
-package awele.bot.NegaMax3;
+package awele.bot.NegaMax6;
 
 import awele.bot.Bot;
 import awele.bot.DemoBot;
@@ -14,7 +14,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author Alexandre Blansché
@@ -23,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 public class NegamaxBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 7;
+    private static final int MAX_DEPTH = 4;
     private boolean train =false;
     private static final int PRACTICE_TIME = 2 * 1000;
     
@@ -33,14 +32,14 @@ public class NegamaxBot extends DemoBot
     private static int i2;
     private static int i3;
     private static int i4;
-    HashMap<Long, NegamaxNode> HashMap ;
+    HashMap<Long, NegamaxNode> HashMap = new HashMap <Long, NegamaxNode>();
     
     /**
      * @throws InvalidBotException
      */
     public NegamaxBot() throws InvalidBotException
     {
-        this.setBotName("NegaMax V3");
+        this.setBotName("NegaMax V6");
         this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
         
     }
@@ -68,7 +67,6 @@ public class NegamaxBot extends DemoBot
     @Override
     public void initialize() {
     if(this.train==false){
-        HashMap  = new HashMap <Long, NegamaxNode>();
         NegamaxNode.initialize( NegamaxBot.MAX_DEPTH,0,0,0,0,0,HashMap);
     }
     }
@@ -242,9 +240,10 @@ public class NegamaxBot extends DemoBot
     { long start = System.currentTimeMillis();
         double[] res = new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer()),-9999,9999).getDecision();
     
+    
         long end = System.currentTimeMillis();
         try {
-            File myObj = new File("log_negamaxV3.txt");
+            File myObj = new File("log_negamaxV6.txt");
             myObj.createNewFile();
             FileWriter myWriter = new FileWriter(myObj.getAbsoluteFile(), true);
             myWriter.write((end - start)+"\n");
