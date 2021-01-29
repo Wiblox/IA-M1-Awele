@@ -22,7 +22,7 @@ import java.util.Map;
 public class NegamaxBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 7;
+    private static final int MAX_DEPTH = 8;
     private boolean train =false;
     private static final int PRACTICE_TIME = 2 * 1000;
     

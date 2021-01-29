@@ -1,4 +1,4 @@
-package awele.bot.NegaMax5;
+package awele.bot.NegaMax6;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -52,7 +52,6 @@ public class NegamaxNode {
     
     public NegamaxNode(Board board, double depth, int myTour, int opponentTour,double a,double b) {
         this.depth=depth;
-
         
         this.decision = new double [Board.NB_HOLES];
         this.evaluation = -Double.MAX_VALUE;
@@ -69,7 +68,8 @@ public class NegamaxNode {
                             || (copy.getNbSeeds() <= 6) || !(depth < NegamaxNode.maxDepth))
                         this.decision[i] = scoreEntireBoardById(copy, myTour);
                     else {
-                        
+    
+                       
                         if(i==0){
                             NegamaxNode child =   negamax(copy, depth+1, opponentTour, myTour,-b,-a);
                         this.decision[i] = -child.getEvaluation();
@@ -77,7 +77,7 @@ public class NegamaxNode {
                             NegamaxNode child =   negamax(copy, depth+2, opponentTour, myTour,-b,-a);
                              this.decision[i] = -child.getEvaluation();
                              if(a < this.decision[i] && this.decision[i] <b){
-                                 child =   negamax(copy, depth+1, opponentTour, myTour,-b,-this.decision[i]);
+                                  child =   negamax(copy, depth+1, opponentTour, myTour,-b,-this.decision[i]);
                                 this.decision[i] = -child.getEvaluation();
                             }
                         }
@@ -87,7 +87,7 @@ public class NegamaxNode {
                     if (this.decision[i] > this.evaluation) {
                         this.evaluation = this.decision[i];
                     }
-                    if(depth>1){
+                    if(depth>0){
         
                         a = Double.max(a, this.decision[i]);
                         if (a >= b) {
@@ -98,11 +98,6 @@ public class NegamaxNode {
                     System.out.println("ERREUR");
                 }
             }
-            //a = Double.max(a, this.decision[i]);
-            //   this.evaluation=a;
-            // if (a >= b) {
-            //     break;
-            //}
         }
     }
     
