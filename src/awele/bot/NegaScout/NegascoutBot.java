@@ -1,4 +1,4 @@
-package awele.bot.NegaMax6;
+package awele.bot.NegaScout;
 
 import awele.bot.Bot;
 import awele.bot.DemoBot;
@@ -19,10 +19,10 @@ import java.util.Map;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class NegamaxBot extends DemoBot
+public class NegascoutBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 4;
+    private static final int MAX_DEPTH = 7;
     private boolean train =false;
     private static final int PRACTICE_TIME = 2 * 1000;
     
@@ -37,7 +37,7 @@ public class NegamaxBot extends DemoBot
     /**
      * @throws InvalidBotException
      */
-    public NegamaxBot() throws InvalidBotException
+    public NegascoutBot() throws InvalidBotException
     {
         this.setBotName("NegaMax V6");
         this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
@@ -52,7 +52,7 @@ public class NegamaxBot extends DemoBot
         return nombreAleatoire;
     }
     public void trainningModeV(int i,int i1, int i2,int i3,int i4){
-        NegamaxNode.initialize( NegamaxBot.MAX_DEPTH,i,i1,i2,i3,i4,HashMap);
+        NegamaxNode.initialize( NegascoutBot.MAX_DEPTH,i,i1,i2,i3,i4,HashMap);
         this.i=i;
         this.i1=i1;
         this.i2=i2;
@@ -67,7 +67,7 @@ public class NegamaxBot extends DemoBot
     @Override
     public void initialize() {
     if(this.train==false){
-        NegamaxNode.initialize( NegamaxBot.MAX_DEPTH,0,0,0,0,0,HashMap);
+        NegamaxNode.initialize( NegascoutBot.MAX_DEPTH,0,0,0,0,0,HashMap);
     }
     }
     
@@ -88,12 +88,12 @@ public class NegamaxBot extends DemoBot
     
     
     private void working() {
-        NegamaxBot[] champions = new NegamaxBot[2];
+        NegascoutBot[] champions = new NegascoutBot[2];
         int practice_games = 0;
         long timer = System.currentTimeMillis ();
         int nbBots = 2;
         try {
-            champions[1] = new  NegamaxBot(); // Ce sont 20 clones de notre MLP
+            champions[1] = new NegascoutBot(); // Ce sont 20 clones de notre MLP
         } catch (InvalidBotException e) {
             e.printStackTrace();
         }
@@ -121,14 +121,14 @@ public class NegamaxBot extends DemoBot
     
     private void trainning() {
     
-        NegamaxBot[] champions = new NegamaxBot[20];
+        NegascoutBot[] champions = new NegascoutBot[20];
         int practice_games = 0;
         long timer = System.currentTimeMillis ();
         int nbBots = 20;
         // Initilisation pour la manche 1
         for(int i =0; i < nbBots; i++) {
             try {
-                champions[i] = new  NegamaxBot(); // Ce sont 20 clones de notre MLP
+                champions[i] = new NegascoutBot(); // Ce sont 20 clones de notre MLP
             } catch (InvalidBotException e) {
                 e.printStackTrace();
             }
@@ -169,12 +169,12 @@ public class NegamaxBot extends DemoBot
     }
     
     
-    private void reproduction(NegamaxBot champion, NegamaxBot champion1) {
+    private void reproduction(NegascoutBot champion, NegascoutBot champion1) {
         trainningModeV((champion.i+champion1.i)/2,(champion.i1+champion1.i1)/2,(champion.i2+champion1.i2)/2,(champion.i3+champion1.i3)/2,(champion.i4+champion1.i4)/2);
     }
     
     
-    private NegamaxBot[] tournament(NegamaxBot[] champions, int nbBots) throws InvalidBotException {
+    private NegascoutBot[] tournament(NegascoutBot[] champions, int nbBots) throws InvalidBotException {
         
             
             SimpleDateFormat df = new SimpleDateFormat("mm:ss.SSS");
@@ -228,7 +228,7 @@ public class NegamaxBot extends DemoBot
     
     
     
-    private void copyModel(NegamaxBot champion) {
+    private void copyModel(NegascoutBot champion) {
         this.trainningModeV(champion.i,champion.i1,champion.i2,champion.i3,champion.i4);
     }
     
