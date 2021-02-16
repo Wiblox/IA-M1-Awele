@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import awele.bot.Bot;
 import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -13,7 +14,7 @@ import awele.core.InvalidBotException;
  */
 public class NegamaxBot extends DemoBot {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 6;
+    private static final int MAX_DEPTH = 5;
 
     /**
      * @throws InvalidBotException
