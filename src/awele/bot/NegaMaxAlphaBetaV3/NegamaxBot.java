@@ -1,20 +1,13 @@
-package awele.bot.NegaMax3;
+package awele.bot.NegaMaxAlphaBetaV3;
 
-import awele.bot.Bot;
 import awele.bot.DemoBot;
-import awele.core.Awele;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author Alexandre Blansché

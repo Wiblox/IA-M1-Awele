@@ -311,7 +311,7 @@ public final class Main extends OutputWriter {
             e.printStackTrace();
         }
         try {
-            File myObj = new File("log_negamaxV5.txt");
+            File myObj = new File("log_negamaxV4.txt");
             Scanner myReader = new Scanner(myObj);
             long res = 0;
             int nbLines = 0;
@@ -322,12 +322,12 @@ public final class Main extends OutputWriter {
             }
             myReader.close();
             myObj.delete();
-            System.out.println("__NegamaxV5 : "+Main.formatDuration(res / nbLines));
+            System.out.println("__NegamaxV4 : "+Main.formatDuration(res / nbLines));
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }        try {
-            File myObj = new File("log_negamaxV6.txt");
+            File myObj = new File("log_negascout.txt");
             Scanner myReader = new Scanner(myObj);
             long res = 0;
             int nbLines = 0;
@@ -338,7 +338,7 @@ public final class Main extends OutputWriter {
             }
             myReader.close();
             myObj.delete();
-            System.out.println("__NegamaxV6 : "+Main.formatDuration(res / nbLines));
+            System.out.println("__negascout : "+Main.formatDuration(res / nbLines));
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

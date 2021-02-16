@@ -243,7 +243,7 @@ public class NegascoutBot extends DemoBot
     
         long end = System.currentTimeMillis();
         try {
-            File myObj = new File("log_negamaxV6.txt");
+            File myObj = new File("log_negascout.txt");
             myObj.createNewFile();
             FileWriter myWriter = new FileWriter(myObj.getAbsoluteFile(), true);
             myWriter.write((end - start)+"\n");
