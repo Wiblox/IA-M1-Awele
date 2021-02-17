@@ -22,7 +22,7 @@ import java.util.Map;
 public class NegascoutBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 5;
+    private static final int MAX_DEPTH = 6;
     private boolean train =false;
     private static final int PRACTICE_TIME = 2 * 1000;
     
@@ -39,7 +39,7 @@ public class NegascoutBot extends DemoBot
      */
     public NegascoutBot() throws InvalidBotException
     {
-        this.setBotName(" Negascout V1");
+        this.setBotName("Negascout V1");
         this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
         
     }

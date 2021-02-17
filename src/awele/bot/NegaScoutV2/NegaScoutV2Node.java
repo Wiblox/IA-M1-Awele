@@ -1,5 +1,6 @@
-package awele.bot.NegaMaxAlphaBetaV3;
+package awele.bot.NegaScoutV2;
 
+import awele.bot.NegaScout.NegamaxNode;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
@@ -8,7 +9,7 @@ import java.util.HashMap;
 /**
  * @author Alexandre Blansché Noeud d'un arbre MinMax
  */
-public class NegamaxNode {
+public class NegaScoutV2Node {
     public static boolean train;
     /** Profondeur maximale */
     private static int maxDepth;
@@ -27,7 +28,7 @@ public class NegamaxNode {
     private double evaluation;
     
     /** Nodes */
-    private static HashMap<Long, NegamaxNode> nodes;
+    private static HashMap<Long, NegaScoutV2Node> nodes;
     
     
     /** Évaluation des coups selon MinMax */
@@ -51,7 +52,7 @@ public class NegamaxNode {
 
      */
 
-    public NegamaxNode(Board board, double depth, int myTour, int opponentTour,double a,double b) {
+    public NegaScoutV2Node(Board board, double depth, int myTour, int opponentTour, double a, double b) {
         this.depth=depth;
         /* On crée index de notre situation */
     
@@ -79,7 +80,7 @@ public class NegamaxNode {
                      * évalue la situation actuelle
                      */
                     if ((score_tmp < 0) || (copy.getScore(Board.otherPlayer(copy.getCurrentPlayer())) >= 25)
-                            || (copy.getNbSeeds() <= 6) || !(depth < NegamaxNode.maxDepth))
+                            || (copy.getNbSeeds() <= 6) || !(depth < NegaScoutV2Node.maxDepth))
                         this.decision[i] = scoreEntireBoardById(copy, myTour);
                     /* Sinon, on explore les coups suivants */
                     else {
@@ -88,10 +89,21 @@ public class NegamaxNode {
                             
                             /* Si le noeud n'a pas encore été calculé, on le construit */
                                 /* On construit le noeud suivant */
-                        NegamaxNode child = negamax(copy, depth + 1, opponentTour, myTour, -b, -a);
-                          
-                            /* On récupère l'évaluation du noeud fils */
+                        if(i==0) {
+                            NegaScoutV2Node child = negamax(copy, depth + 1, opponentTour, myTour, -b, -a);
                             this.decision[i] = -child.getEvaluation();
+    
+                        }else {
+                            NegaScoutV2Node child = negamax(copy, depth + 1, opponentTour, myTour, -a-1, -a);
+                            this.decision[i] = -child.getEvaluation();
+                            if (a < this.decision[i] && this.decision[i] < b) {
+                                child = negamax(copy, depth + 1, opponentTour, myTour, -b, -this.decision[i]);
+                                this.decision[i] = -child.getEvaluation();
+        
+                            }
+                        }
+                            /* On récupère l'évaluation du noeud fils */
+                           // this.decision[i] = -child.getEvaluation();
                         
                         /*
                          * Sinon (si la profondeur maximale est atteinte), on évalue la situation
@@ -162,21 +174,21 @@ public class NegamaxNode {
     return score-total;
     }
 
-    private NegamaxNode negamax(Board board, double depth, int myTour, int opponentTour,double i,double j) {
-        return new NegamaxNode(board, depth, myTour, opponentTour,i,j);
+    private NegaScoutV2Node negamax(Board board, double depth, int myTour, int opponentTour, double i, double j) {
+        return new NegaScoutV2Node(board, depth, myTour, opponentTour,i,j);
     }
 
     /**
      * Initialisation
      */
-    protected static void initialize(int maxDepth, int i4, int i3, int i2, int i1, int i,HashMap <Long, NegamaxNode> HashMap) {
-        NegamaxNode.nodes = HashMap;
-        NegamaxNode.maxDepth = maxDepth;
-        NegamaxNode.i=i;
-        NegamaxNode.i1=i1;
-        NegamaxNode.i2=i2;
-        NegamaxNode.i3=i3;
-        NegamaxNode.i4=i4;
+    protected static void initialize(int maxDepth, int i4, int i3, int i2, int i1, int i,HashMap <Long, NegaScoutV2Node> HashMap) {
+        NegaScoutV2Node.nodes = HashMap;
+        NegaScoutV2Node.maxDepth = maxDepth;
+        NegaScoutV2Node.i=i;
+        NegaScoutV2Node.i1=i1;
+        NegaScoutV2Node.i2=i2;
+        NegaScoutV2Node.i3=i3;
+        NegaScoutV2Node.i4=i4;
     }
     
     /**
@@ -184,9 +196,9 @@ public class NegamaxNode {
      * @param index L'indice du noeud
      * @return Le noeud qui a l'indice indiqué ou null s'il n'a pas encore été calculé
      */
-    public static NegamaxNode getNode (long index)
+    public static NegaScoutV2Node getNode (long index)
     {
-        return NegamaxNode.nodes.get (index);
+        return NegaScoutV2Node.nodes.get (index);
     }
     
     /**
@@ -194,7 +206,7 @@ public class NegamaxNode {
      */
     public static int getNbNodes ()
     {
-        return NegamaxNode.nodes.size ();
+        return NegaScoutV2Node.nodes.size ();
     }
 
 

@@ -52,8 +52,6 @@ public class NegamaxNode {
     
     public NegamaxNode(Board board, double depth, int myTour, int opponentTour,double alpha,double beta) {
         this.depth=depth;
-        
-        
         this.decision = new double [Board.NB_HOLES];
         this.evaluation = -Double.MAX_VALUE;
         
@@ -70,22 +68,32 @@ public class NegamaxNode {
                         this.decision[i] = scoreEntireBoardById(copy, myTour);
                     else {
           
-                            NegamaxNode child =   negamax(copy, depth+1, opponentTour, myTour,-beta,-alpha);
+                        
+                        if(i==0){
+                            NegamaxNode child = negamax(copy, depth + 1, opponentTour, myTour, -beta, -alpha);
                             this.decision[i] = -child.getEvaluation();
-                            if(alpha < this.decision[i] && this.decision[i] <beta ){
-                                child =   negamax(copy, depth+1, opponentTour, myTour,-beta,-alpha);
+                        }
+                        else {
+                            NegamaxNode child = negamax(copy, maxDepth, opponentTour, myTour, -beta, -alpha);
+                            this.decision[i] = -child.getEvaluation();
+                            if (alpha < this.decision[i] && this.decision[i] < beta) {
+                                child = negamax(copy, depth + 1, opponentTour, myTour, -beta, -this.decision[i]);
                                 this.decision[i] = -child.getEvaluation();
-                            
+    
                             }
+                        }
                     }
                     if (this.decision[i] > this.evaluation) {
                         this.evaluation = this.decision[i];
                     }
+                    
+                    
                     alpha = Double.max(alpha, this.decision[i]);
+                    if(depth>0){
                         if (alpha >= beta) {
                             this.evaluation = alpha;
                             break;
-                        }
+                        }}
                 } catch (InvalidBotException e) {
                     this.decision[i] = 0;
                     System.out.println("ERREUR");

@@ -1,4 +1,4 @@
-package awele.bot.NegaMaxAlphaBetaV3;
+package awele.bot.NegaScoutV2;
 
 import awele.bot.DemoBot;
 import awele.core.Board;
@@ -13,21 +13,21 @@ import java.util.HashMap;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class NegamaxBot extends DemoBot
+public class NegaScoutV2Bot extends DemoBot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 6;
 
     
     /** Variable de genetique  */
-    HashMap<Long, NegamaxNode> HashMap ;
+    HashMap<Long, NegaScoutV2Node> HashMap ;
     
     /**
      * @throws InvalidBotException
      */
-    public NegamaxBot() throws InvalidBotException
+    public NegaScoutV2Bot() throws InvalidBotException
     {
-        this.setBotName("NegaMax V3");
+        this.setBotName("NegaScout  V2");
         this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
         
     }
@@ -41,8 +41,8 @@ public class NegamaxBot extends DemoBot
      */
     @Override
     public void initialize() {
-        HashMap  = new HashMap <Long, NegamaxNode>();
-        NegamaxNode.initialize( NegamaxBot.MAX_DEPTH,0,0,0,0,0,HashMap);
+        HashMap  = new HashMap <Long, NegaScoutV2Node>();
+        NegaScoutV2Node.initialize( NegaScoutV2Bot.MAX_DEPTH,0,0,0,0,0,HashMap);
     
     }
     
@@ -70,11 +70,11 @@ public class NegamaxBot extends DemoBot
     @Override
     public double [] getDecision (Board board)
     { long start = System.currentTimeMillis();
-        double[] res = new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer()),-9999,9999).getDecision();
+        double[] res = new NegaScoutV2Node(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer()),-9999,9999).getDecision();
     
         long end = System.currentTimeMillis();
         try {
-            File myObj = new File("log_negamaxV3.txt");
+            File myObj = new File("log_negascoutV2.txt");
             myObj.createNewFile();
             FileWriter myWriter = new FileWriter(myObj.getAbsoluteFile(), true);
             myWriter.write((end - start)+"\n");

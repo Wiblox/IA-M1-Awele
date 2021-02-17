@@ -31,7 +31,7 @@ public final class Main extends OutputWriter {
     private static final String LOG_FILE = "awele.log";
     private static final String ANONYMOUS_LOG_FILE = "awele.anonymous.log";
     //private static final int NB_RUNS = 100;
-    private static final int NB_RUNS = 1;
+    private static final int NB_RUNS = 10;
     private static final int MAX_LEARNING_TIME = 1000 * 60 * 60 * 1; // 1 h
     private static final int MAX_DECISION_TIME = 100; // 100 ms
     private static final int MAX_MEMORY = 1024 * 1024 * 64; // 64 MiB
@@ -269,8 +269,6 @@ public final class Main extends OutputWriter {
      * @param args
      */
     public static void main(String[] args) {
-        new File("log_negamaxV2.txt").delete();
-        new File("log_negamaxV3.txt").delete();
         Main main = Main.getInstance();
         main.addOutput(StandardOutput.getInstance());
         main.addOutput(new LogFileOutput(Main.LOG_FILE));
@@ -311,22 +309,6 @@ public final class Main extends OutputWriter {
             e.printStackTrace();
         }
         try {
-            File myObj = new File("log_negamaxV4.txt");
-            Scanner myReader = new Scanner(myObj);
-            long res = 0;
-            int nbLines = 0;
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                nbLines++;
-                res += Long.parseLong(data);
-            }
-            myReader.close();
-            myObj.delete();
-            System.out.println("__NegamaxV4 : "+Main.formatDuration(res / nbLines));
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }        try {
             File myObj = new File("log_negascout.txt");
             Scanner myReader = new Scanner(myObj);
             long res = 0;
@@ -339,6 +321,23 @@ public final class Main extends OutputWriter {
             myReader.close();
             myObj.delete();
             System.out.println("__negascout : "+Main.formatDuration(res / nbLines));
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        try {
+            File myObj = new File("log_negascoutV2.txt");
+            Scanner myReader = new Scanner(myObj);
+            long res = 0;
+            int nbLines = 0;
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                nbLines++;
+                res += Long.parseLong(data);
+            }
+            myReader.close();
+            myObj.delete();
+            System.out.println("__negascoutV2 : "+Main.formatDuration(res / nbLines));
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
