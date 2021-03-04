@@ -1,5 +1,6 @@
 package awele.bot.negatest;
 
+import awele.bot.Bot;
 import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -13,7 +14,7 @@ import java.util.HashMap;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class NegamaxBot extends DemoBot
+public class NegamaxBot extends Bot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 9 ;

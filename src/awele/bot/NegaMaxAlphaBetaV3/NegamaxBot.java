@@ -17,9 +17,9 @@ import java.util.Map;
 public class NegamaxBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 9  ;
+    private static final int MAX_DEPTH = 8  ;
 
-    
+    private int nbutilisable;
     /** Variable de genetique  */
     private Map<String, ttEntry> nodes;
     
@@ -43,7 +43,8 @@ public class NegamaxBot extends DemoBot
     @Override
     public void initialize() {
         nodes = new HashMap<String, ttEntry>();
-        NegamaxNode.initialize( NegamaxBot.MAX_DEPTH,0,0,0,0,0,nodes);
+        nbutilisable=0;
+        NegamaxNode.initialize( NegamaxBot.MAX_DEPTH,0,0,0,0,0,nodes,nbutilisable);
     
     }
     
@@ -91,5 +92,7 @@ public class NegamaxBot extends DemoBot
     @Override
     public void finish () {
         System.out.println("Nb de noeud = " + nodes.size() );
+        System.out.println("Nb de noeud utrilisé = " + NegamaxNode.nbutilisable );
+    
     }
 }

@@ -29,7 +29,6 @@ public class NegaScoutV2Node {
     
     /** Nodes */
     //private static HashMap<Long, NegaScoutV2Node> nodes;
-    private Map<String, ttEntry> nodes;
 
     /** Évaluation des coups selon MinMax */
     private double[] decision;
@@ -44,7 +43,6 @@ public class NegaScoutV2Node {
 
    
     public NegaScoutV2Node(Board board, double depth, int myTour, int opponentTour, double a, double b) {
-        nodes = new HashMap<String, ttEntry>();
 
 
 

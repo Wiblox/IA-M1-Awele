@@ -4,6 +4,7 @@ package awele.bot.NegaMaxAlphaBetaV3;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +23,7 @@ public class NegamaxNode {
     private static int i3;
     private static int i4;
     private static Map<String, ttEntry> nodes;
+    public static int nbutilisable;
     
     private double depth;
     
@@ -47,12 +49,15 @@ public class NegamaxNode {
     
         boolean exit =false;
         double alphaOrig = a;
-        ttEntry te = this.nodes.get(board.getPlayerHoles().toString()
-               
-                + board.getOpponentHoles().toString()
+        ttEntry te = this.nodes.get(Arrays.toString(board.getPlayerHoles())+board.getScore(board.getCurrentPlayer())
+                + Arrays.toString(board.getOpponentHoles())+board.getScore(Board.otherPlayer(board.getCurrentPlayer()))
         );
-        if(te != null && te.getDepth() >= depth) {
-            if(te.getFlag() == Flag.EXACT) {
+       
+        
+        
+        if(te != null && te.getDepth() <= depth ) {// A verifier
+            nbutilisable++;
+            if(te.getFlag() == Flag.EXACT ) {
                 this.evaluation= te.getValue();
                 exit =true;
             }
@@ -68,20 +73,18 @@ public class NegamaxNode {
     
             }
         }
-        if(te==null){
-            te = new ttEntry();
-        }
-        
-        
-        if(!exit){
+  
+    
+        this.decision = new double [Board.NB_HOLES];
         this.depth=depth;
+    
+        if(!exit){
         /* On crée index de notre situation */
+            this.evaluation = -Double.MAX_VALUE;
 
     
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
-        this.decision = new double [Board.NB_HOLES];
         /* Initialisation de l'évaluation courante */
-        this.evaluation = -Double.MAX_VALUE;
 
         for (int i = 0; i < Board.NB_HOLES; i++) {
             /* Si le coup est jouable */
@@ -91,6 +94,7 @@ public class NegamaxNode {
                 decision[i] = 1;
                 /* On copie la grille de jeu et on joue le coup sur la copie */
                 Board copy = (Board) board.clone();
+           
                 try {
                     int score_tmp = copy.playMoveSimulationScore(copy.getCurrentPlayer(), decision);
                     copy = copy.playMoveSimulationBoard(copy.getCurrentPlayer(), decision);
@@ -140,7 +144,9 @@ public class NegamaxNode {
                 }
             }
         }
-        
+            if(te==null){
+                te = new ttEntry();
+            }
         te.setValue(this.evaluation);
         if(this.evaluation <= alphaOrig) {
             te.setFlag(Flag.UPPERBOUND);
@@ -152,12 +158,8 @@ public class NegamaxNode {
             te.setFlag(Flag.EXACT);
         }
         te.setDepth(depth);
-        this.nodes.put(
-                board.getPlayerHoles().toString()
-                       
-                        + board.getOpponentHoles().toString()
-                        
-                , te);
+        this.nodes.put(Arrays.toString(board.getPlayerHoles())+board.getScore(board.getCurrentPlayer())
+                + Arrays.toString(board.getOpponentHoles())+board.getScore(Board.otherPlayer(board.getCurrentPlayer()))  , te);
         }
         
     }
@@ -209,7 +211,7 @@ public class NegamaxNode {
     /**
      * Initialisation
      */
-    protected static void initialize(int maxDepth, int i4, int i3, int i2, int i1, int i, Map<String, ttEntry> nodees) {
+    protected static void initialize(int maxDepth, int i4, int i3, int i2, int i1, int i, Map<String, ttEntry> nodees,int nbutilisable) {
         NegamaxNode.maxDepth = maxDepth;
         NegamaxNode.i=i;
         NegamaxNode.i1=i1;
@@ -217,6 +219,7 @@ public class NegamaxNode {
         NegamaxNode.i3=i3;
         NegamaxNode.i4=i4;
         NegamaxNode.nodes=nodees;
+        NegamaxNode.nbutilisable=nbutilisable;
     }
     
     public int afficheN(){
