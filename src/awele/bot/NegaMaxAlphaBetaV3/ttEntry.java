@@ -1,10 +1,9 @@
-package awele.bot.NegaScoutV2;
+package awele.bot.NegaMaxAlphaBetaV3;
 
 public class ttEntry {
     private double depth;
     private double value; //evaluation
     private Flag flag;
-
     public ttEntry(){
     
     }

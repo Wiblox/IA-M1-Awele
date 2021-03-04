@@ -19,7 +19,7 @@ import java.util.Map;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class NegascoutBot extends DemoBot
+public class NegascoutBot extends Bot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 6;

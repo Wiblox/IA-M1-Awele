@@ -1,11 +1,9 @@
-package awele.bot.NegaMaxAlphaBetaV3;
-
+package awele.bot.negatest;
 
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author Alexandre Blansché Noeud d'un arbre MinMax
@@ -21,62 +19,44 @@ public class NegamaxNode {
     private static int i2;
     private static int i3;
     private static int i4;
-    private static Map<String, ttEntry> nodes;
+    private final long index;
     
     private double depth;
     
     /** L'évaluation du noeud */
     private double evaluation;
     
-    
+    /** Nodes */
+    private static HashMap<Long, NegamaxNode> nodes;
     
     
     /** Évaluation des coups selon MinMax */
     private double[] decision;
-   
+    /**
+     * Returns an unique hash identifier for the current board. The
+     * produced hash code is a 44 bit number which uniquely identifies
+     * a position and turn.
+     *
+     * @return  The hash code value for this object
+     */
+    public long hash(Board board) {
+        long test = board.hashCode();
+        return test;
+    }
     /**
      * Constructeur...
-     *
+     * 
      * @param board L'état de la grille de jeu
      * @param depth La profondeur du noeud
 
      */
-   
+
     public NegamaxNode(Board board, double depth, int myTour, int opponentTour,double a,double b) {
-        
-    
-        boolean exit =false;
-        double alphaOrig = a;
-        ttEntry te = this.nodes.get(board.getPlayerHoles().toString()
-               
-                + board.getOpponentHoles().toString()
-        );
-        if(te != null && te.getDepth() >= depth) {
-            if(te.getFlag() == Flag.EXACT) {
-                this.evaluation= te.getValue();
-                exit =true;
-            }
-            else if(te.getFlag() == Flag.LOWERBOUND) {
-                a = Double.max(a, te.getValue());
-            }
-            else if(te.getFlag() == Flag.UPPERBOUND) {
-                b = Double.min(b, te.getValue());
-            }
-            if(a >= b) {
-                this.evaluation= te.getValue();
-                exit =true;
-    
-            }
-        }
-        if(te==null){
-            te = new ttEntry();
-        }
-        
-        
-        if(!exit){
         this.depth=depth;
         /* On crée index de notre situation */
-
+    
+        this.index = hash(board);//134234
+        //this.nodes.put (this.index, this);
     
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
@@ -134,32 +114,12 @@ public class NegamaxNode {
                         break;
                     }
                 }
-                
+                    
                 } catch (InvalidBotException e) {
                     this.decision[i] = 0;
                 }
             }
         }
-        
-        te.setValue(this.evaluation);
-        if(this.evaluation <= alphaOrig) {
-            te.setFlag(Flag.UPPERBOUND);
-        }
-        else if(this.evaluation >= b) {
-            te.setFlag(Flag.LOWERBOUND);
-        }
-        else {
-            te.setFlag(Flag.EXACT);
-        }
-        te.setDepth(depth);
-        this.nodes.put(
-                board.getPlayerHoles().toString()
-                       
-                        + board.getOpponentHoles().toString()
-                        
-                , te);
-        }
-        
     }
     
     
@@ -209,18 +169,32 @@ public class NegamaxNode {
     /**
      * Initialisation
      */
-    protected static void initialize(int maxDepth, int i4, int i3, int i2, int i1, int i, Map<String, ttEntry> nodees) {
+    protected static void initialize(int maxDepth, int i4, int i3, int i2, int i1, int i,HashMap <Long, NegamaxNode> HashMap) {
+        NegamaxNode.nodes = HashMap;
         NegamaxNode.maxDepth = maxDepth;
         NegamaxNode.i=i;
         NegamaxNode.i1=i1;
         NegamaxNode.i2=i2;
         NegamaxNode.i3=i3;
         NegamaxNode.i4=i4;
-        NegamaxNode.nodes=nodees;
     }
     
-    public int afficheN(){
-    return nodes.size();
+    /**
+     * Récupération d'un noeud déjà calculé
+     * @param index L'indice du noeud
+     * @return Le noeud qui a l'indice indiqué ou null s'il n'a pas encore été calculé
+     */
+    public static NegamaxNode getNode (long index)
+    {
+        return NegamaxNode.nodes.get (index);
+    }
+    
+    /**
+     * @return Le nombre de noeuds calculées
+     */
+    public static int getNbNodes ()
+    {
+        return NegamaxNode.nodes.size ();
     }
 
 

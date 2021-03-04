@@ -21,7 +21,6 @@ public class NegaScoutV2Node {
     private static int i2;
     private static int i3;
     private static int i4;
-    private final long index;
     
     private double depth;
     
@@ -34,18 +33,7 @@ public class NegaScoutV2Node {
 
     /** Évaluation des coups selon MinMax */
     private double[] decision;
-    /**
-     * Returns an unique hash identifier for the current board. The
-     * produced hash code is a 44 bit number which uniquely identifies
-     * a position and turn.
-     *
-     * @return  The hash code value for this object
-     */
-    public long hash(Board board, long score) {
-        // score courant + board complet
-        long test = score + board.hashCode();
-        return test;
-    }
+  
     /**
      * Constructeur...
      * 
@@ -54,53 +42,7 @@ public class NegaScoutV2Node {
 
      */
 
-    //(* Initial call for Player A's root node *)
-    //negamax(rootNode, depth, −∞, +∞, 1)
-    private double negamax2(Board board, double depth, int myTour, int opponentTour, double a, double b) {
-        double alphaOrig = a;
-        ttEntry te = this.nodes.get(board.getPlayerHoles().toString()
-                + String.valueOf(board.getScore(board.getCurrentPlayer()))
-                + board.getOpponentHoles().toString()
-                + String.valueOf(board.getScore(Board.otherPlayer(board.getCurrentPlayer()))));
-        if(te != null && te.getDepth() >= depth) {
-            if(te.getFlag() == Flag.EXACT) {
-                return te.getValue();
-            }
-            else if(te.getFlag() == Flag.LOWERBOUND) {
-                a = Double.max(a, te.getValue());
-            }
-            else if(te.getFlag() == Flag.UPPERBOUND) {
-                b = Double.min(b, te.getValue());
-            }
-            if(a >= b) {
-                return te.getValue();
-            }
-        }
-        if(depth == 0 /*|| node is a terminal node*/) {
-            // TODO : return color × the heuristic value of node;
-        }
-        double value = -Double.MAX_VALUE;
-        // TODO : La boucle for ...
-        te.setValue(value);
-        if(value <= alphaOrig) {
-            te.setFlag(Flag.UPPERBOUND);
-        }
-        else if(value >= b) {
-            te.setFlag(Flag.LOWERBOUND);
-        }
-        else {
-            te.setFlag(Flag.EXACT);
-        }
-        te.setDepth(depth);
-        this.nodes.put(
-            board.getPlayerHoles().toString()
-                + String.valueOf(board.getScore(board.getCurrentPlayer()))
-                + board.getOpponentHoles().toString()
-                + String.valueOf(board.getScore(Board.otherPlayer(board.getCurrentPlayer())))
-            , te);
-        return value;
-    }
-
+   
     public NegaScoutV2Node(Board board, double depth, int myTour, int opponentTour, double a, double b) {
         nodes = new HashMap<String, ttEntry>();
 
@@ -145,7 +87,6 @@ public class NegaScoutV2Node {
                             if (a < this.decision[i] && this.decision[i] < b) {
                                 child = negamax(copy, depth + 1, opponentTour, myTour, -b, -this.decision[i]);
                                 this.decision[i] = -child.getEvaluation();
-        
                             }
                         }
                             /* On récupère l'évaluation du noeud fils */
@@ -227,7 +168,6 @@ public class NegaScoutV2Node {
      * Initialisation
      */
     protected static void initialize(int maxDepth, int i4, int i3, int i2, int i1, int i,HashMap <Long, NegaScoutV2Node> HashMap) {
-        NegaScoutV2Node.nodes = HashMap;
         NegaScoutV2Node.maxDepth = maxDepth;
         NegaScoutV2Node.i=i;
         NegaScoutV2Node.i1=i1;
@@ -236,23 +176,7 @@ public class NegaScoutV2Node {
         NegaScoutV2Node.i4=i4;
     }
     
-    /**
-     * Récupération d'un noeud déjà calculé
-     * @param index L'indice du noeud
-     * @return Le noeud qui a l'indice indiqué ou null s'il n'a pas encore été calculé
-     */
-    public static NegaScoutV2Node getNode (long index)
-    {
-        return NegaScoutV2Node.nodes.get (index);
-    }
-    
-    /**
-     * @return Le nombre de noeuds calculées
-     */
-    public static int getNbNodes ()
-    {
-        return NegaScoutV2Node.nodes.size ();
-    }
+
 
 
     /**

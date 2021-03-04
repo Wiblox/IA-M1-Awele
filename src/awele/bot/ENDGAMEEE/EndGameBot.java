@@ -1,5 +1,6 @@
 package awele.bot.ENDGAMEEE;
 
+import awele.bot.Bot;
 import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -10,7 +11,7 @@ import java.util.HashMap;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class EndGameBot extends DemoBot
+public class EndGameBot extends Bot
 {
     /** Profondeur maximale */
     //Nombre Impair Autrement BUG

@@ -1,5 +1,6 @@
 package awele.bot.MinMaxEVOLVE;
 
+import awele.bot.Bot;
 import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -15,7 +16,7 @@ import java.util.*;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class MinMaxBot extends DemoBot
+public class MinMaxBot extends Bot
 {
     
     private RandomDecisionForest randomForest;

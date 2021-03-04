@@ -1,5 +1,6 @@
 package awele.bot.minmax;
 
+import awele.bot.Bot;
 import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
@@ -8,7 +9,7 @@ import awele.core.InvalidBotException;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class MinMaxBot extends DemoBot
+public class MinMaxBot extends Bot
 {
     /** Profondeur maximale */
     private static final int MAX_DEPTH = 6;

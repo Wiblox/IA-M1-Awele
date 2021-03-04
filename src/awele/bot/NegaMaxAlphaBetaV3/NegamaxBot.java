@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Alexandre Blansché
@@ -16,11 +17,11 @@ import java.util.HashMap;
 public class NegamaxBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 6;
+    private static final int MAX_DEPTH = 9  ;
 
     
     /** Variable de genetique  */
-    HashMap<Long, NegamaxNode> HashMap ;
+    private Map<String, ttEntry> nodes;
     
     /**
      * @throws InvalidBotException
@@ -41,8 +42,8 @@ public class NegamaxBot extends DemoBot
      */
     @Override
     public void initialize() {
-        HashMap  = new HashMap <Long, NegamaxNode>();
-        NegamaxNode.initialize( NegamaxBot.MAX_DEPTH,0,0,0,0,0,HashMap);
+        nodes = new HashMap<String, ttEntry>();
+        NegamaxNode.initialize( NegamaxBot.MAX_DEPTH,0,0,0,0,0,nodes);
     
     }
     
@@ -89,5 +90,6 @@ public class NegamaxBot extends DemoBot
      */
     @Override
     public void finish () {
+        System.out.println("Nb de noeud = " + nodes.size() );
     }
 }
