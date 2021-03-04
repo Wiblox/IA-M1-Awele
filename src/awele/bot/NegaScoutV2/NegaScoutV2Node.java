@@ -5,6 +5,7 @@ import awele.core.Board;
 import awele.core.InvalidBotException;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Alexandre Blansché Noeud d'un arbre MinMax
@@ -28,9 +29,9 @@ public class NegaScoutV2Node {
     private double evaluation;
     
     /** Nodes */
-    private static HashMap<Long, NegaScoutV2Node> nodes;
-    
-    
+    //private static HashMap<Long, NegaScoutV2Node> nodes;
+    private Map<String, ttEntry> nodes;
+
     /** Évaluation des coups selon MinMax */
     private double[] decision;
     /**
@@ -40,8 +41,9 @@ public class NegaScoutV2Node {
      *
      * @return  The hash code value for this object
      */
-    public long hash(Board board) {
-        long test = board.hashCode();
+    public long hash(Board board, long score) {
+        // score courant + board complet
+        long test = score + board.hashCode();
         return test;
     }
     /**
@@ -52,13 +54,61 @@ public class NegaScoutV2Node {
 
      */
 
+    //(* Initial call for Player A's root node *)
+    //negamax(rootNode, depth, −∞, +∞, 1)
+    private double negamax2(Board board, double depth, int myTour, int opponentTour, double a, double b) {
+        double alphaOrig = a;
+        ttEntry te = this.nodes.get(board.getPlayerHoles().toString()
+                + String.valueOf(board.getScore(board.getCurrentPlayer()))
+                + board.getOpponentHoles().toString()
+                + String.valueOf(board.getScore(Board.otherPlayer(board.getCurrentPlayer()))));
+        if(te != null && te.getDepth() >= depth) {
+            if(te.getFlag() == Flag.EXACT) {
+                return te.getValue();
+            }
+            else if(te.getFlag() == Flag.LOWERBOUND) {
+                a = Double.max(a, te.getValue());
+            }
+            else if(te.getFlag() == Flag.UPPERBOUND) {
+                b = Double.min(b, te.getValue());
+            }
+            if(a >= b) {
+                return te.getValue();
+            }
+        }
+        if(depth == 0 /*|| node is a terminal node*/) {
+            // TODO : return color × the heuristic value of node;
+        }
+        double value = -Double.MAX_VALUE;
+        // TODO : La boucle for ...
+        te.setValue(value);
+        if(value <= alphaOrig) {
+            te.setFlag(Flag.UPPERBOUND);
+        }
+        else if(value >= b) {
+            te.setFlag(Flag.LOWERBOUND);
+        }
+        else {
+            te.setFlag(Flag.EXACT);
+        }
+        te.setDepth(depth);
+        this.nodes.put(
+            board.getPlayerHoles().toString()
+                + String.valueOf(board.getScore(board.getCurrentPlayer()))
+                + board.getOpponentHoles().toString()
+                + String.valueOf(board.getScore(Board.otherPlayer(board.getCurrentPlayer())))
+            , te);
+        return value;
+    }
+
     public NegaScoutV2Node(Board board, double depth, int myTour, int opponentTour, double a, double b) {
+        nodes = new HashMap<String, ttEntry>();
+
+
+
         this.depth=depth;
         /* On crée index de notre situation */
-    
-        this.index = hash(board);//134234
-        //this.nodes.put (this.index, this);
-    
+
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         this.decision = new double [Board.NB_HOLES];
         /* Initialisation de l'évaluation courante */
@@ -84,16 +134,12 @@ public class NegaScoutV2Node {
                         this.decision[i] = scoreEntireBoardById(copy, myTour);
                     /* Sinon, on explore les coups suivants */
                     else {
-    
-    
-                            
-                            /* Si le noeud n'a pas encore été calculé, on le construit */
-                                /* On construit le noeud suivant */
+                        /* Si le noeud n'a pas encore été calculé, on le construit */
+                        /* On construit le noeud suivant */
                         if(i==0) {
                             NegaScoutV2Node child = negamax(copy, depth + 1, opponentTour, myTour, -b, -a);
                             this.decision[i] = -child.getEvaluation();
-    
-                        }else {
+                        } else {
                             NegaScoutV2Node child = negamax(copy, depth + 1, opponentTour, myTour, -a-1, -a);
                             this.decision[i] = -child.getEvaluation();
                             if (a < this.decision[i] && this.decision[i] < b) {
@@ -136,7 +182,6 @@ public class NegaScoutV2Node {
     
     
     private double getDepth() {
-        
         return  depth;
     }
     
