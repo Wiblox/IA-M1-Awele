@@ -11,7 +11,7 @@ import java.util.HashMap;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class EndGameBot extends Bot
+public class EndGameBot extends DemoBot
 {
     /** Profondeur maximale */
     //Nombre Impair Autrement BUG

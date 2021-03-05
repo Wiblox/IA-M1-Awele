@@ -1,14 +1,8 @@
-package awele.bot.negatest;
+package awele.bot.negatestV2;
 
-import awele.bot.Bot;
 import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.HashMap;
 
 /**
  * @author Alexandre Blansché
@@ -17,7 +11,7 @@ import java.util.HashMap;
 public class NegamaxBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 10 ;
+    private static final int MAX_DEPTH = 9 ;
 
     
     
@@ -26,7 +20,7 @@ public class NegamaxBot extends DemoBot
      */
     public NegamaxBot() throws InvalidBotException
     {
-        this.setBotName("NegaMax V3 TEST");
+        this.setBotName("NegaMax  TEST elagage reduit");
         this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
         
     }

@@ -44,7 +44,7 @@ public class NegamaxBot extends DemoBot
     public void initialize() {
         nodes = new HashMap<String, ttEntry>();
         nbutilisable=0;
-        NegamaxNode.initialize( NegamaxBot.MAX_DEPTH,0,0,0,0,0,nodes,nbutilisable);
+        NegamaxNode.initialize( NegamaxBot.MAX_DEPTH,nodes,nbutilisable);
     
     }
     

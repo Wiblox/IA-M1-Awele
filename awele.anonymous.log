@@ -1,75 +1,111 @@
 Mémoire totale : 8,0 GiB
 Instanciation du bot "Random"
-3 classes ont été trouvées
-class awele.bot.first.FirstBot
+4 classes ont été trouvées
+class awele.bot.negatest.NegamaxBot
 class awele.bot.NegaScoutV2.NegaScoutV2Bot
+class awele.bot.negatestV2.NegamaxBot
 class awele.bot.NegaMaxAlphaBetaV3.NegamaxBot
 
-Bot 1/3
-Classe : awele.bot.first.FirstBot
-Instanciation du bot "First"
-Nom du bot : First
+Bot 1/4
+Classe : awele.bot.negatest.NegamaxBot
+Instanciation du bot "NegaMax V3 TEST"
+Nom du bot : NegaMax V3 TEST
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.000
-Usage mémoire : 0 B
-Usage mémoire maximum : 671,4 KiB
+Durée d'une prise de décision : 00:00:00.090
+Usage mémoire : 391,7 KiB
+Usage mémoire maximum : 106,4 MiB
 
-Bot 2/3
+Bot 2/4
 Classe : awele.bot.NegaScoutV2.NegaScoutV2Bot
 Instanciation du bot "NegaScout  V2"
 Nom du bot : NegaScout  V2
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.073
-Usage mémoire : 404,0 KiB
-Usage mémoire maximum : 92,4 MiB
+Durée d'une prise de décision : 00:00:00.094
+Usage mémoire : 968 B
+Usage mémoire maximum : 148,0 MiB
 
-Bot 3/3
+Bot 3/4
+Classe : awele.bot.negatestV2.NegamaxBot
+Instanciation du bot "NegaMax  TEST elagage reduit"
+Nom du bot : NegaMax  TEST elagage reduit
+Temps d'apprentissage : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.066
+Usage mémoire : 888 B
+Usage mémoire maximum : 98,0 MiB
+
+Bot 4/4
 Classe : awele.bot.NegaMaxAlphaBetaV3.NegamaxBot
 Instanciation du bot "NegaMax V3"
 Nom du bot : NegaMax V3
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.038
-Usage mémoire : 38,6 MiB
-Usage mémoire maximum : 204,6 MiB
+Durée d'une prise de décision : 00:00:00.025
+Usage mémoire : 32,7 MiB
+Usage mémoire maximum : 336,5 MiB
 
-3 bots ont été instanciés
-Durée du chargement : 00:00:04.969
-Mémoire utilisée : 45,3 MiB
+4 bots ont été instanciés
+Durée du chargement : 00:00:09.917
+Mémoire utilisée : 38,3 MiB
 
 Que le championnat commence !
 
-Affrontement 1/3
-First vs. NegaScout  V2
-Score : 0.0 - 3.0
-NegaScout  V2 a gagné
-Nombre de coups joués : 48.3 par match
-Durée : 00:00:01.756 par match
-Mémoire utilisée : 42,6 MiB
+Affrontement 1/6
+NegaMax V3 TEST vs. NegaScout  V2
+Score : 1.8 - 1.2
+NegaMax V3 TEST a gagné
+Nombre de coups joués : 119.3 par match
+Durée : 00:00:06.611 par match
+Mémoire utilisée : 36,8 MiB
 
-Affrontement 2/3
-First vs. NegaMax V3
-Score : 0.0 - 3.0
-NegaMax V3 a gagné
-Nombre de coups joués : 38.3 par match
-Durée : 00:00:00.798 par match
-Mémoire utilisée : 40,2 MiB
+Affrontement 2/6
+NegaMax V3 TEST vs. NegaMax  TEST elagage reduit
+Score : 2.0 - 0.8
+NegaMax V3 TEST a gagné
+Nombre de coups joués : 122.9 par match
+Durée : 00:00:06.605 par match
+Mémoire utilisée : 36,8 MiB
 
-Affrontement 3/3
+Affrontement 3/6
+NegaMax V3 TEST vs. NegaMax V3
+Score : 2.6 - 0.2
+NegaMax V3 TEST a gagné
+Nombre de coups joués : 90.4 par match
+Durée : 00:00:03.511 par match
+Mémoire utilisée : 70,3 MiB
+
+Affrontement 4/6
+NegaScout  V2 vs. NegaMax  TEST elagage reduit
+Score : 0.8 - 2.0
+NegaMax  TEST elagage reduit a gagné
+Nombre de coups joués : 164.8 par match
+Durée : 00:00:09.096 par match
+Mémoire utilisée : 70,3 MiB
+
+Affrontement 5/6
 NegaScout  V2 vs. NegaMax V3
-Score : 1.2 - 1.8
-NegaMax V3 a gagné
-Nombre de coups joués : 122.0 par match
-Durée : 00:00:05.896 par match
-Mémoire utilisée : 75,6 MiB
+Score : 2.4 - 0.6
+NegaScout  V2 a gagné
+Nombre de coups joués : 139.7 par match
+Durée : 00:00:05.472 par match
+Mémoire utilisée : 60,5 MiB
 
-Durée du championnat : 00:01:24.869
+Affrontement 6/6
+NegaMax  TEST elagage reduit vs. NegaMax V3
+Score : 2.4 - 0.6
+NegaMax  TEST elagage reduit a gagné
+Nombre de coups joués : 104.0 par match
+Durée : 00:00:02.447 par match
+Mémoire utilisée : 42,8 MiB
+
+Durée du championnat : 00:05:38.014
 
 Scores finaux :
-First : 0.0
-NegaScout  V2 : 4.2
-NegaMax V3 : 4.8
+NegaMax V3 TEST : 6.4
+NegaScout  V2 : 4.4
+NegaMax  TEST elagage reduit : 5.2
+NegaMax V3 : 1.4
 
 Rangs :
-1. NegaMax V3 : 4.8
-2. NegaScout  V2 : 4.2
-3. First : 0.0
+1. NegaMax V3 TEST : 6.4
+2. NegaMax  TEST elagage reduit : 5.2
+3. NegaScout  V2 : 4.4
+4. NegaMax V3 : 1.4

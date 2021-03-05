@@ -85,26 +85,25 @@ public class NegamaxNode {
     
         /* On crée un tableau des évaluations des coups à jouer pour chaque situation possible */
         /* Initialisation de l'évaluation courante */
+            double[] decision = new double[Board.NB_HOLES];
 
         for (int i = 0; i < Board.NB_HOLES; i++) {
             /* Si le coup est jouable */
             if (board.getPlayerHoles()[i] != 0) {
                 /* Sélection du coup à jouer */
-                double[] decision = new double[Board.NB_HOLES];
-                decision[i] = 1;
+                decision[i] = 1*(i+1);
                 /* On copie la grille de jeu et on joue le coup sur la copie */
-                Board copy = (Board) board.clone();
+                Board copy;
            
                 try {
-                    int score_tmp = copy.playMoveSimulationScore(copy.getCurrentPlayer(), decision);
-                    copy = copy.playMoveSimulationBoard(copy.getCurrentPlayer(), decision);
+                    copy = board.playMoveSimulationBoard(myTour, decision);
                     /*
                      * Si la nouvelle situation de jeu est un coup qui met fin à la partie, on
                      * évalue la situation actuelle
                      */
-                    if ((score_tmp < 0) || (copy.getScore(Board.otherPlayer(copy.getCurrentPlayer())) >= 25)
+                    if ((copy.getScore(myTour) < 0) || (copy.getScore(opponentTour) >= 25)
                             || (copy.getNbSeeds() <= 6) || !(depth < NegamaxNode.maxDepth))
-                        this.decision[i] = scoreEntireBoardById(copy, myTour);
+                        this.decision[i] = scoreEntireBoardById(copy, myTour,opponentTour);
                     /* Sinon, on explore les coups suivants */
                     else {
     
@@ -112,7 +111,7 @@ public class NegamaxNode {
                             
                             /* Si le noeud n'a pas encore été calculé, on le construit */
                                 /* On construit le noeud suivant */
-                        NegamaxNode child = negamax(copy, depth + 1, opponentTour, myTour, -b, -a);
+                        NegamaxNode child = new NegamaxNode(copy, depth + 1, opponentTour, myTour, -b, -a);
                           
                             /* On récupère l'évaluation du noeud fils */
                             this.decision[i] = -child.getEvaluation();
@@ -165,19 +164,16 @@ public class NegamaxNode {
     }
     
     
-    private double getDepth() {
-        
-        return  depth;
-    }
+
     
     
-    private int scoreEntireBoardById(Board board, int myTour) {
+    private int scoreEntireBoardById(Board board, int myTour,int opponentTour) {
     
     
         int score;
         int seeds;
     
-        score = (25+i4) * (board.getScore(myTour) - board.getScore(Board.otherPlayer(myTour)));
+        score = (25+i4) * (board.getScore(myTour) - board.getScore(opponentTour));
         int total = 0;
         
         for (int i = 0; i < 6; i++) {
@@ -203,28 +199,17 @@ public class NegamaxNode {
     
     return score-total;
     }
-
-    private NegamaxNode negamax(Board board, double depth, int myTour, int opponentTour,double i,double j) {
-        return new NegamaxNode(board, depth, myTour, opponentTour,i,j);
-    }
+    
 
     /**
      * Initialisation
      */
-    protected static void initialize(int maxDepth, int i4, int i3, int i2, int i1, int i, Map<String, ttEntry> nodees,int nbutilisable) {
+    protected static void initialize(int maxDepth, Map<String, ttEntry> nodees,int nbutilisable) {
         NegamaxNode.maxDepth = maxDepth;
-        NegamaxNode.i=i;
-        NegamaxNode.i1=i1;
-        NegamaxNode.i2=i2;
-        NegamaxNode.i3=i3;
-        NegamaxNode.i4=i4;
         NegamaxNode.nodes=nodees;
         NegamaxNode.nbutilisable=nbutilisable;
     }
     
-    public int afficheN(){
-    return nodes.size();
-    }
 
 
     /**

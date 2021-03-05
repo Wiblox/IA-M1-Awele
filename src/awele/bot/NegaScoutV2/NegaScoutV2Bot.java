@@ -42,7 +42,7 @@ public class NegaScoutV2Bot extends DemoBot {
     @Override
     public void initialize() {
         HashMap = new HashMap<Long, NegaScoutV2Node>();
-        NegaScoutV2Node.initialize(NegaScoutV2Bot.MAX_DEPTH, 0, 0, 0, 0, 0, HashMap);
+        NegaScoutV2Node.initialize(NegaScoutV2Bot.MAX_DEPTH, HashMap);
 
     }
 
@@ -52,8 +52,6 @@ public class NegaScoutV2Bot extends DemoBot {
      */
     @Override
     public void learn() {
-        // trainning();
-        //working();
     }
 
 
@@ -62,11 +60,11 @@ public class NegaScoutV2Bot extends DemoBot {
      */
     @Override
     public double[] getDecision(Board board) {
-        long start = System.currentTimeMillis();
+        //long start = System.currentTimeMillis();
         double[] res = new NegaScoutV2Node(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer()), -9999, 9999).getDecision();
 
-        long end = System.currentTimeMillis();
-        try {
+     //   long end = System.currentTimeMillis();
+       /* try {
             File myObj = new File("log_negascoutV2.txt");
             myObj.createNewFile();
             FileWriter myWriter = new FileWriter(myObj.getAbsoluteFile(), true);
@@ -74,7 +72,7 @@ public class NegaScoutV2Bot extends DemoBot {
             myWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         return res;
     }
 
