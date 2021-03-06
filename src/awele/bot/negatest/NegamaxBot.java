@@ -1,77 +1,53 @@
 package awele.bot.negatest;
 
-import awele.bot.Bot;
 import awele.bot.DemoBot;
 import awele.core.Board;
 import awele.core.InvalidBotException;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.HashMap;
 
 /**
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class NegamaxBot extends DemoBot
-{
-    /** Profondeur maximale */
-    private static final int MAX_DEPTH = 9 ;
+public class NegamaxBot extends DemoBot {
+    /**
+     * Profondeur maximale
+     */
+    private static final int MAX_DEPTH = 9;
 
-    
-    
     /**
      * @throws InvalidBotException
      */
-    public NegamaxBot() throws InvalidBotException
-    {
+    public NegamaxBot() throws InvalidBotException {
         this.setBotName("NegaMax V3 TEST");
         this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
-        
     }
-    
 
-
-    
     /**
      * Fonction d'initalisation du bot
      * Cette fonction est appelée avant chaque affrontement
      */
     @Override
     public void initialize() {
-        NegamaxNode.initialize( NegamaxBot.MAX_DEPTH);
-    
+        NegamaxNode.initialize(NegamaxBot.MAX_DEPTH);
     }
-    
-    
- 
 
     /**
      * Pas d'apprentissage
      */
     @Override
-    public void learn () {
-    }
-    
-
-    
+    public void learn() { }
 
     /**
      * Sélection du coup selon l'algorithme MinMax
      */
     @Override
-    public double [] getDecision (Board board)
-    {
-        double[] res = new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer()),-9999,9999).getDecision();
-    
-       
-        return res;}
+    public double[] getDecision(Board board) {
+        return new NegamaxNode(board, 0, board.getCurrentPlayer(), Board.otherPlayer(board.getCurrentPlayer()), -9999, 9999).getDecision();
+    }
 
     /**
      * Rien à faire
      */
     @Override
-    public void finish () {
-    }
+    public void finish() { }
 }

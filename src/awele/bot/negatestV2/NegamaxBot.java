@@ -12,7 +12,7 @@ import awele.core.InvalidBotException;
 public class NegamaxBot extends Bot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 9 ;
+    private static final int MAX_DEPTH = 8 ;
 
     
     

@@ -1,6 +1,6 @@
 package awele.bot.NegaScoutV2;
 
-import awele.bot.DemoBot;
+import awele.bot.*;
 import awele.core.Board;
 import awele.core.InvalidBotException;
 
@@ -13,11 +13,11 @@ import java.util.HashMap;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class NegaScoutV2Bot extends DemoBot {
+public class NegaScoutV2Bot extends Bot {
     /**
      * Profondeur maximale
      */
-    private static final int MAX_DEPTH = 9;
+    private static final int MAX_DEPTH = 8;
 
 
     /**
