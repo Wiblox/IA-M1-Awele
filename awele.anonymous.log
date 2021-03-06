@@ -1,75 +1,111 @@
 Mémoire totale : 8,0 GiB
 Instanciation du bot "Random"
-3 classes ont été trouvées
+4 classes ont été trouvées
 class awele.bot.negatest.NegamaxBot
 class awele.bot.NegaScout.NegaScoutV2Bot
 class awele.bot.MinMaxEVOLVE.MinMaxBot
+class awele.bot.negatestV2.NegamaxBot
 
-Bot 1/3
+Bot 1/4
 Classe : awele.bot.negatest.NegamaxBot
 Instanciation du bot "NegaMax V3 Profondeur = 10"
 Nom du bot : NegaMax V3 Profondeur = 10
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.085
-Usage mémoire : 391,7 KiB
-Usage mémoire maximum : 12,4 MiB
+Durée d'une prise de décision : 00:00:00.093
+Usage mémoire : 391,6 KiB
+Usage mémoire maximum : 114,4 MiB
 
-Bot 2/3
+Bot 2/4
 Classe : awele.bot.NegaScout.NegaScoutV2Bot
 Instanciation du bot "NegaScout  V2 VERSION OK"
 Nom du bot : NegaScout  V2 VERSION OK
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.081
+Durée d'une prise de décision : 00:00:00.061
 Usage mémoire : 40,0 KiB
-Usage mémoire maximum : 74,1 MiB
+Usage mémoire maximum : 108,1 MiB
 
-Bot 3/3
+Bot 3/4
 Classe : awele.bot.MinMaxEVOLVE.MinMaxBot
 Instanciation du bot "MinMaxBOOSTED"
 Nom du bot : MinMaxBOOSTED
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.002
+Durée d'une prise de décision : 00:00:00.003
 Usage mémoire : 1,6 KiB
-Usage mémoire maximum : 86,0 MiB
+Usage mémoire maximum : 136,0 MiB
 
-3 bots ont été instanciés
-Durée du chargement : 00:00:06.503
+Bot 4/4
+Classe : awele.bot.negatestV2.NegamaxBot
+Instanciation du bot "NegaMax  TEST elagage reduit"
+Nom du bot : NegaMax  TEST elagage reduit
+Temps d'apprentissage : 00:00:00.000
+Durée d'une prise de décision : 00:00:00.073
+Usage mémoire : 968 B
+Usage mémoire maximum : 26,0 MiB
+
+4 bots ont été instanciés
+Durée du chargement : 00:00:07.680
 Mémoire utilisée : 4,3 MiB
 
 Que le championnat commence !
 
-Affrontement 1/3
+Affrontement 1/6
 NegaMax V3 Profondeur = 10 vs. NegaScout  V2 VERSION OK
 Score : 3.0 - 0.0
 NegaMax V3 Profondeur = 10 a gagné
-Nombre de coups joués : 53.7 par match
-Durée : 00:00:03.833 par match
+Nombre de coups joués : 55.7 par match
+Durée : 00:00:04.189 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 2/3
+Affrontement 2/6
 NegaMax V3 Profondeur = 10 vs. MinMaxBOOSTED
 Score : 3.0 - 0.0
 NegaMax V3 Profondeur = 10 a gagné
-Nombre de coups joués : 63.5 par match
-Durée : 00:00:02.820 par match
+Nombre de coups joués : 66.3 par match
+Durée : 00:00:02.411 par match
 Mémoire utilisée : 4,1 MiB
 
-Affrontement 3/3
+Affrontement 3/6
+NegaMax V3 Profondeur = 10 vs. NegaMax  TEST elagage reduit
+Score : 2.4 - 0.6
+NegaMax V3 Profondeur = 10 a gagné
+Nombre de coups joués : 123.0 par match
+Durée : 00:00:04.729 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 4/6
 NegaScout  V2 VERSION OK vs. MinMaxBOOSTED
-Score : 0.6 - 2.4
-MinMaxBOOSTED a gagné
-Nombre de coups joués : 66.2 par match
-Durée : 00:00:01.952 par match
+Score : 1.4 - 1.4
+Égalité
+Nombre de coups joués : 56.8 par match
+Durée : 00:00:01.739 par match
 Mémoire utilisée : 4,1 MiB
 
-Durée du championnat : 00:01:26.113
+Affrontement 5/6
+NegaScout  V2 VERSION OK vs. NegaMax  TEST elagage reduit
+Score : 0.0 - 3.0
+NegaMax  TEST elagage reduit a gagné
+Nombre de coups joués : 58.1 par match
+Durée : 00:00:04.313 par match
+Mémoire utilisée : 4,1 MiB
+
+Affrontement 6/6
+MinMaxBOOSTED vs. NegaMax  TEST elagage reduit
+Score : 0.0 - 3.0
+NegaMax  TEST elagage reduit a gagné
+Nombre de coups joués : 77.2 par match
+Durée : 00:00:01.943 par match
+Mémoire utilisée : 4,1 MiB
+
+Durée du championnat : 00:03:13.360
 
 Scores finaux :
-NegaMax V3 Profondeur = 10 : 6.0
-NegaScout  V2 VERSION OK : 0.6
-MinMaxBOOSTED : 2.4
+NegaMax V3 Profondeur = 10 : 8.4
+NegaScout  V2 VERSION OK : 1.4
+MinMaxBOOSTED : 1.4
+NegaMax  TEST elagage reduit : 6.6
 
 Rangs :
-1. NegaMax V3 Profondeur = 10 : 6.0
-2. MinMaxBOOSTED : 2.4
-3. NegaScout  V2 VERSION OK : 0.6
+1. NegaMax V3 Profondeur = 10 : 8.4
+2. NegaMax  TEST elagage reduit : 6.6
+3. MinMaxBOOSTED : 1.4
+4. NegaScout  V2 VERSION OK : 1.4
