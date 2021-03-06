@@ -12,9 +12,9 @@ Instanciation du bot "NegaMax V3 TEST"
 Nom du bot : NegaMax V3 TEST
 Auteur(s) : Quentin BEAUPUY & Vivien KORPYS
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.036
-Usage mémoire : 391,6 KiB
-Usage mémoire maximum : 130,5 MiB
+Durée d'une prise de décision : 00:00:00.037
+Usage mémoire : 391,7 KiB
+Usage mémoire maximum : 66,4 MiB
 
 Bot 2/4
 Classe : awele.bot.NegaScout.NegaScoutV2Bot
@@ -22,9 +22,9 @@ Instanciation du bot "NegaScout  V2 VERSION OK"
 Nom du bot : NegaScout  V2 VERSION OK
 Auteur(s) : Quentin BEAUPUY & Vivien KORPYS
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.094
-Usage mémoire : 40,5 KiB
-Usage mémoire maximum : 36,1 MiB
+Durée d'une prise de décision : 00:00:00.081
+Usage mémoire : 40,0 KiB
+Usage mémoire maximum : 54,1 MiB
 
 Bot 3/4
 Classe : awele.bot.MinMaxEVOLVE.MinMaxBot
@@ -32,9 +32,9 @@ Instanciation du bot "MinMaxBOOSTED"
 Nom du bot : MinMaxBOOSTED
 Auteur(s) : Vivien KORPYS
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.002
+Durée d'une prise de décision : 00:00:00.004
 Usage mémoire : 1,6 KiB
-Usage mémoire maximum : 82,0 MiB
+Usage mémoire maximum : 24,0 MiB
 
 Bot 4/4
 Classe : awele.bot.NegaScoutV2.NegaScoutV2Bot
@@ -42,74 +42,15 @@ Instanciation du bot "NegaScout  V2"
 Nom du bot : NegaScout  V2
 Auteur(s) : Quentin BEAUPUY & Vivien KORPYS
 Temps d'apprentissage : 00:00:00.000
-Durée d'une prise de décision : 00:00:00.071
+Durée d'une prise de décision : 00:00:00.069
 Usage mémoire : 1016 B
-Usage mémoire maximum : 154,0 MiB
+Usage mémoire maximum : 144,0 MiB
 
 4 bots ont été instanciés
-Durée du chargement : 00:00:08.485
+Durée du chargement : 00:00:07.109
 Mémoire utilisée : 4,3 MiB
 
 Que le championnat commence !
 
 Affrontement 1/6
 NegaMax V3 TEST vs. NegaScout  V2 VERSION OK
-Score : 3.0 - 0.0
-NegaMax V3 TEST a gagné
-Nombre de coups joués : 69.7 par match
-Durée : 00:00:03.130 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 2/6
-NegaMax V3 TEST vs. MinMaxBOOSTED
-Score : 3.0 - 0.0
-NegaMax V3 TEST a gagné
-Nombre de coups joués : 83.3 par match
-Durée : 00:00:01.522 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 3/6
-NegaMax V3 TEST vs. NegaScout  V2
-Score : 1.2 - 1.8
-NegaScout  V2 a gagné
-Nombre de coups joués : 127.7 par match
-Durée : 00:00:06.774 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 4/6
-NegaScout  V2 VERSION OK vs. MinMaxBOOSTED
-Score : 1.4 - 1.4
-Égalité
-Nombre de coups joués : 62.7 par match
-Durée : 00:00:01.717 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 5/6
-NegaScout  V2 VERSION OK vs. NegaScout  V2
-Score : 0.0 - 3.0
-NegaScout  V2 a gagné
-Nombre de coups joués : 62.1 par match
-Durée : 00:00:04.880 par match
-Mémoire utilisée : 4,1 MiB
-
-Affrontement 6/6
-MinMaxBOOSTED vs. NegaScout  V2
-Score : 0.0 - 3.0
-NegaScout  V2 a gagné
-Nombre de coups joués : 72.9 par match
-Durée : 00:00:03.434 par match
-Mémoire utilisée : 4,1 MiB
-
-Durée du championnat : 00:03:34.699
-
-Scores finaux :
-NegaMax V3 TEST : 7.2
-NegaScout  V2 VERSION OK : 1.4
-MinMaxBOOSTED : 1.4
-NegaScout  V2 : 7.8
-
-Rangs :
-1. NegaScout  V2 : 7.8
-2. NegaMax V3 TEST : 7.2
-3. MinMaxBOOSTED : 1.4
-4. NegaScout  V2 VERSION OK : 1.4
