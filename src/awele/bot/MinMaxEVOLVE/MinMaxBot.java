@@ -16,7 +16,7 @@ import java.util.*;
  * @author Alexandre Blansché
  * Bot qui prend ses décisions selon le MinMax
  */
-public class MinMaxBot extends Bot
+public class MinMaxBot extends DemoBot
 {
     
     private RandomDecisionForest randomForest;

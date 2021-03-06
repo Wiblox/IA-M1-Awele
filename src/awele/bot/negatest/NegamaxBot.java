@@ -17,7 +17,7 @@ import java.util.HashMap;
 public class NegamaxBot extends DemoBot
 {
     /** Profondeur maximale */
-    private static final int MAX_DEPTH = 10 ;
+    private static final int MAX_DEPTH = 9 ;
 
     
     
