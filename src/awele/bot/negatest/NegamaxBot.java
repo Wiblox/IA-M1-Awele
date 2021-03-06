@@ -12,13 +12,13 @@ public class NegamaxBot extends DemoBot {
     /**
      * Profondeur maximale
      */
-    private static final int MAX_DEPTH = 9;
+    private static final int MAX_DEPTH = 10;
 
     /**
      * @throws InvalidBotException
      */
     public NegamaxBot() throws InvalidBotException {
-        this.setBotName("NegaMax V3 TEST");
+        this.setBotName("NegaMax V3 Profondeur = " + MAX_DEPTH);
         this.addAuthor("Quentin BEAUPUY & Vivien KORPYS");
     }
 

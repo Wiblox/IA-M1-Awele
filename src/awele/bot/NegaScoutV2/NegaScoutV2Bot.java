@@ -17,7 +17,7 @@ public class NegaScoutV2Bot extends Bot {
     /**
      * Profondeur maximale
      */
-    private static final int MAX_DEPTH = 8;
+    private static final int MAX_DEPTH = 10;
 
 
     /**

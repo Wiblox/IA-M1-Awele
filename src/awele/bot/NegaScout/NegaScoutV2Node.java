@@ -70,7 +70,7 @@ public class NegaScoutV2Node {
                      */
                     if ((copy.getScore(myTour) < 0) || (copy.getScore(opponentTour) >= 25)
                             || (copy.getNbSeeds() <= 6) || !(depth < NegaScoutV2Node.maxDepth))
-                        this.decision[i] = scoreEntireBoardById(copy, myTour);
+                        this.decision[i] = scoreEntireBoardById(copy, myTour,opponentTour);
                         /* Sinon, on explore les coups suivants */
                     else {
                         /* Si le noeud n'a pas encore été cal culé, on le construit */
@@ -117,37 +117,24 @@ public class NegaScoutV2Node {
     
     
     
-    private int scoreEntireBoardById(Board board, int myTour) {
+    private int scoreEntireBoardById(Board board, int myTour,int opponentTour) {
     
-    
-        int score;
-        int seeds;
-    
-        score = (25) * (board.getScore(myTour) - board.getScore(Board.otherPlayer(myTour)));
         int total = 0;
-        
-        for (int i = 0; i < 6; i++) {
-            seeds = board.getPlayerHoles()[i];
-            if (seeds > 12)
-                total += 28;
-            else if (seeds == 0)
-                total -= 54;
-            else if (seeds < 3)
-                total -= 36;
-        }
+        int[] seedsPlayer = board.getPlayerHoles(),
+                seedsOpponent = board.getOpponentHoles();
     
         for (int i = 0; i < 6; i++) {
-            seeds = board.getOpponentHoles()[i];
-        
-            if (seeds > 12)
-                total -= 28;
-            else if (seeds == 0)
-                total += 54;
-            else if (seeds < 3)
-                total += 36;
+            int seedP = seedsPlayer[i],
+                    seedO = seedsOpponent[i];
+            if (seedP > 12 ^ seedO > 12)
+                total += seedP > 12 ? 28 : -28;
+            else if (seedP == 0 ^ seedO == 0)
+                total += seedP == 0 ? -54 : 54;
+            else if (seedP < 3 ^ seedO < 3)
+                total += seedP < 3 ? -36 : 36;
         }
     
-    return score-total;
+        return 25 * (board.getScore(myTour) - board.getScore(opponentTour) )- total;
     }
 
 

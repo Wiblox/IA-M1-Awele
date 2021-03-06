@@ -49,18 +49,17 @@ public class NegaScoutV2Node {
                 double[] decision = new double[Board.NB_HOLES];
                 decision[i] = 1;
                 /* On copie la grille de jeu et on joue le coup sur la copie */
-                Board copy = (Board) board.clone();
+                Board copy;
                 try {
-                    int score_tmp = copy.playMoveSimulationScore(copy.getCurrentPlayer(), decision);
-                    copy = copy.playMoveSimulationBoard(copy.getCurrentPlayer(), decision);
+                    copy = board.playMoveSimulationBoard(myTour, decision);
                     /*
                      * Si la nouvelle situation de jeu est un coup qui met fin à la partie, on
                      * évalue la situation actuelle
                      */
-                    if ((score_tmp < 0) || (copy.getScore(Board.otherPlayer(copy.getCurrentPlayer())) >= 25)
+                    if ((copy.getScore(myTour) < 0) || (copy.getScore(opponentTour) >= 25)
                             || (copy.getNbSeeds() <= 6) || !(depth < NegaScoutV2Node.maxDepth))
                         this.decision[i] = scoreEntireBoardById(copy, myTour);
-                    /* Sinon, on explore les coups suivants */
+                        /* Sinon, on explore les coups suivants */
                     else {
                         /* Si le noeud n'a pas encore été calculé, on le construit */
                         /* On construit le noeud suivant */
